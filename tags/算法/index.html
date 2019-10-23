@@ -10,7 +10,7 @@
     
     
     
-    <title>Hello World | badEgg</title>
+    <title>tags: 算法 | badEgg</title>
     <link href="http://yoursite.com" rel="prefetch" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -104,20 +104,64 @@
                 
                 
                 
-                <li class="">
-                    <a href="/categories">
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-list"></i>分类
                     </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
                 </li>
                 
                 
                 
                 
                 
-                <li class="">
-                    <a href="/tags">
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-tags"></i>标签
                     </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/%E6%97%A5%E5%B8%B8/">日常</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/leetcode/">leetcode</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
                 </li>
                 
                 
@@ -138,27 +182,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    
-<article class="article well article-body" id="article">
+                    <article class="article well article-body" id="article-tag">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://yoursite.com">badEgg</a>
         >
-        <span>Hello World</span>
+        <span>标签</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/10/23/hello-world/">Hello World</a>
+                <a href="/tags/%E7%AE%97%E6%B3%95/index.html">算法</a>
             </h1>
-        </div>
-        <div class="tag-article">
-            
-            <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2019-10-23
-            </span>
-            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -166,37 +202,27 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2019/10/23/hello-world/">Hello World</a>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/index.html">算法</a>
                 </h4>
             </div>
-            <p>
-                <i class="fa fa-calendar"></i> 2019-10-23
-            </p>
-            <p>
-                
-                
-            </p>
         </center>
     </div>
-    <div class="content-article">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+    <div class="content-article" style="margin-top: 30px;">
+        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+            
+            <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">leetcode - 整数反转</a>
+            <br>
+            
+            <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
+            <br>
+            
+            <a href="/2019/10/23/leetcode-%E5%9B%9E%E6%96%87%E6%95%B0/">leetcode - 回文数</a>
+            <br>
+            
+            
+        </div>
     </div>
 </article>
-
-
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -253,7 +279,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/23/hello-world/">Hello World</a>
+                    <a href="/2019/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">数据库实验 - oracle</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">leetcode - 整数反转</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/leetcode-%E5%9B%9E%E6%96%87%E6%95%B0/">leetcode - 回文数</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/01/212-23%E4%BA%8B/">212 23事</a>
                 </span>
             </li>
             
@@ -275,7 +325,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/23/hello-world/">Hello World</a>
+                    <a href="/2019/10/01/212-23%E4%BA%8B/">212 23事</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/leetcode-%E5%9B%9E%E6%96%87%E6%95%B0/">leetcode - 回文数</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">leetcode - 整数反转</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">数据库实验 - oracle</a>
                 </span>
             </li>
             
@@ -290,23 +364,31 @@
 
                 
                 <li>
-                    <a href="/2019/10/23/hello-world/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/10/23/hello-world/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/10/23/hello-world/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
             <div class="tab-content">
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10.126747299380785px;" class="tag-cloud-link">日常</a>
+    
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 11.264772456215134px;" class="tag-cloud-link">算法</a>
+    
+    <a href="/tags/leetcode/" style="font-size: 17.714047948115475px;" class="tag-cloud-link">leetcode</a>
+    
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 18.67930712516055px;" class="tag-cloud-link">数据库</a>
     
 </div>
                 

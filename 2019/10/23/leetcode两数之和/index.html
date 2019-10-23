@@ -10,7 +10,7 @@
     
     
     
-    <title>404 | badEgg</title>
+    <title>leetcode - 两数之和 | badEgg</title>
     <link href="http://yoursite.com" rel="prefetch" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -182,10 +182,82 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <!-- 搜索页面(尽可能接近ZanBlog搜索功能) -->
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">badEgg</a>
+        >
+        <span>leetcode - 两数之和</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>, 
+                
+                <a href="/tags/leetcode/">leetcode</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-10-23
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-10-23
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>, 
+                
+                <a href="/tags/leetcode/">leetcode</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="leetcode-两数之和"><a href="#leetcode-两数之和" class="headerlink" title="leetcode: 两数之和"></a>leetcode: 两数之和</h2><p>给定一个整数数组 <code>nums</code> 和一个目标值 <code>target</code>，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。</p>
+<p>对这道题一开始的思路是两套循环遍历找到为目标值的两个数，代码如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; List[int]:</span></span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">        	<span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(nums)):</span><br><span class="line">            	<span class="keyword">if</span>(nums[i] + nums[j] == target):</span><br><span class="line">                	<span class="keyword">return</span> [i, j]</span><br></pre></td></tr></table></figure>
+<p>循环遍历一遍，时间复杂度是n^2，可以通过但是非常常规且有时会超时</p>
+<hr>
+<p>经过评论大佬的启迪，做一次排序后首尾递进显然更快，复杂度为排序的nlogn</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; List[int]:</span></span><br><span class="line">		sorted_id = sorted(range(len(nums)), key=<span class="keyword">lambda</span> k: nums[k])</span><br><span class="line">    	head = <span class="number">0</span></span><br><span class="line">    	tail = len(nums) - <span class="number">1</span></span><br><span class="line">    	sum_result = nums[sorted_id[head]] + nums[sorted_id[tail]]</span><br><span class="line">    	<span class="keyword">while</span> sum_result != target:</span><br><span class="line">        	<span class="keyword">if</span> sum_result &gt; target:</span><br><span class="line">            	tail -= <span class="number">1</span></span><br><span class="line">        	<span class="keyword">elif</span> sum_result &lt; target:</span><br><span class="line">            	head += <span class="number">1</span></span><br><span class="line">        	sum_result = nums[sorted_id[head]] + nums[sorted_id[tail]]</span><br><span class="line">    	<span class="keyword">return</span> [sorted_id[head], sorted_id[tail]]</span><br></pre></td></tr></table></figure>
+<p>这个速度明显会更快，但更花费空间</p>
+<hr>
+<p>这样还不够，发现比较的都是数字，那么就有了更快的办法—hash字典</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums, target)</span>:</span></span><br><span class="line">        hashmap = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> index, num <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">            another_num = target - num</span><br><span class="line">            <span class="keyword">if</span> another_num <span class="keyword">in</span> hashmap:</span><br><span class="line">                <span class="keyword">return</span> [hashmap[another_num], index]</span><br><span class="line">            hashmap[num] = index</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
 
-<!-- 404 自定义页面 -->
-<!-- 有其他想自定义的page在这里添加判断条件, 并且写好对应的模板渲染文件 -->
+<p>用hash字典大大增加了内存但是速度快到了n</p>
+<p>还是图样图森破</p>
+<p>这是第一天份的，明天继续= =</p>
+
+    </div>
+</article>
+
 
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
@@ -328,17 +400,17 @@
 
                 
                 <li>
-                    <a href="/404/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/404/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/404/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -346,13 +418,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10.653863829632538px;" class="tag-cloud-link">日常</a>
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 13.71005332434584px;" class="tag-cloud-link">日常</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10.102555828428756px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 17.218625972446148px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/leetcode/" style="font-size: 10.081649121921007px;" class="tag-cloud-link">leetcode</a>
+    <a href="/tags/leetcode/" style="font-size: 9.158599420859783px;" class="tag-cloud-link">leetcode</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.793472626206668px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 15.806434963590714px;" class="tag-cloud-link">数据库</a>
     
 </div>
                 
