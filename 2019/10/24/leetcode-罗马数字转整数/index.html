@@ -10,7 +10,7 @@
     
     
     
-    <title>leetcode - 整数反转 | badEgg</title>
+    <title>leetcode - 罗马数字转整数 | badEgg</title>
     <link href="https://nomalbuthappy.github.io" rel="prefetch" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -204,13 +204,13 @@
         <i class="fa fa-home"></i>
         <a href="https://nomalbuthappy.github.io">badEgg</a>
         >
-        <span>leetcode - 整数反转</span>
+        <span>leetcode - 罗马数字转整数</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">leetcode - 整数反转</a>
+                <a href="/2019/10/24/leetcode-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/">leetcode - 罗马数字转整数</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -225,7 +225,7 @@
             </span>
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2019-10-23
+                <i class="fa fa-calendar"></i> 2019-10-24
             </span>
             
             <span class="label label-gal">
@@ -239,11 +239,11 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">leetcode - 整数反转</a>
+                    <a href="/2019/10/24/leetcode-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/">leetcode - 罗马数字转整数</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2019-10-23
+                <i class="fa fa-calendar"></i> 2019-10-24
             </p>
             <p>
                 
@@ -261,26 +261,24 @@
         </center>
     </div>
     <div class="content-article">
-        <h2 id="leetcode-整数反转"><a href="#leetcode-整数反转" class="headerlink" title="leetcode: 整数反转"></a>leetcode: 整数反转</h2><p>给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。</p>
-<p>注意:</p>
-<p>假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−231,  231 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。</p>
-<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/reverse-integer" target="_blank" rel="noopener">https://leetcode-cn.com/problems/reverse-integer</a></p>
-<p>首先，反转整数需要考虑两点，一是是否有负号，有符号需要把符号放到最前面，二是末尾有没有0，有0需要去掉，因为数字首位是不能为零的。</p>
-<p>考虑到python取模10时结果会是正数，所以把数字转为字符处理更为方便</p>
-<p>另外，题设假设环境只能存储得下32位int整型数字，python不需要考虑数字长度，所以我们直接用if判断数字大小</p>
-<p>代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(self, x: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> x == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        str_x = str(x)</span><br><span class="line">        x = <span class="string">''</span></span><br><span class="line">        <span class="keyword">if</span> str_x[<span class="number">0</span>] == <span class="string">'-'</span>:</span><br><span class="line">            x += <span class="string">'-'</span></span><br><span class="line">        x += str_x[len(str_x)<span class="number">-1</span>::<span class="number">-1</span>].lstrip(<span class="string">"0"</span>).rstrip(<span class="string">"-"</span>)</span><br><span class="line">        x = int(x)</span><br><span class="line">        <span class="keyword">if</span> <span class="number">-2</span>**<span class="number">31</span>&lt;x&lt;<span class="number">2</span>**<span class="number">31</span><span class="number">-1</span>:</span><br><span class="line">            <span class="keyword">return</span> x</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+        <h2 id="leetcode-罗马数字转整数"><a href="#leetcode-罗马数字转整数" class="headerlink" title="leetcode: 罗马数字转整数"></a>leetcode: 罗马数字转整数</h2><p>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。</p>
+<p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p>
+<p>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。<br>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。<br>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。<br>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。</p>
+<p>罗马数字转整数乍一看觉得需要多方面的考虑比如每个字符之间的组合分别考虑之类的，但是再细看我们可以发现，实际上我们做计算时它遵循的只有两个规律</p>
+<ol>
+<li>左边大于右边时加上这个左边的数</li>
+<li>左边小于右边时减去这个左边的数</li>
+</ol>
+<p>那么我们就可以着手编程了:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">romanToInt</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        d = &#123;<span class="string">'I'</span>:<span class="number">1</span>, <span class="string">'V'</span>:<span class="number">5</span>, <span class="string">'X'</span>:<span class="number">10</span>, <span class="string">'L'</span>:<span class="number">50</span>, <span class="string">'C'</span>:<span class="number">100</span>, <span class="string">'D'</span>:<span class="number">500</span>, <span class="string">'M'</span>:<span class="number">1000</span>&#125;        </span><br><span class="line">        ans=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):            </span><br><span class="line">            <span class="keyword">if</span> i&lt;len(s)<span class="number">-1</span> <span class="keyword">and</span> a[s[i]]&lt;a[s[i+<span class="number">1</span>]]:                </span><br><span class="line">                ans-=a[s[i]]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ans+=a[s[i]]</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
 
-<hr>
-<p>注意到其中用了[len(str_x)-1::-1]，意义是从len(str_x)开始，以-1递减的方式截取，达到反取的作用，第二位不写默认是0</p>
-<p>lstrip方法，表示截取最左边的某个字符，多个重复全部截取</p>
-<p>rstrip方法同上不过是截取右边</p>
-<hr>
-<p>评论大佬中也有不处理为字符串的方法，就是对数字做取余处理，这里贴一下代码以供学习：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(self, x: int)</span> -&gt; int:</span></span><br><span class="line">        <span class="comment"># 避免python负数取模的特性，改为对正数取整</span></span><br><span class="line">        num: int = x <span class="keyword">if</span> x &gt; <span class="number">0</span> <span class="keyword">else</span> -x</span><br><span class="line">        ans: int = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        MAX_VALUE = <span class="number">2147483647</span></span><br><span class="line">        MIN_VALUE = <span class="number">-2147483648</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(num != <span class="number">0</span>):</span><br><span class="line">            pop: int = num % <span class="number">10</span></span><br><span class="line">            <span class="keyword">if</span> x &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">if</span> (ans &gt; MAX_VALUE // <span class="number">10</span>) <span class="keyword">or</span> (ans == MAX_VALUE // <span class="number">10</span> <span class="keyword">and</span> pop &gt; <span class="number">7</span>):</span><br><span class="line">                    <span class="comment"># 正溢出</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">elif</span> x &lt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">if</span> (ans &gt; -MIN_VALUE // <span class="number">10</span>) <span class="keyword">or</span> (ans == -MAX_VALUE // <span class="number">10</span> <span class="keyword">and</span> pop &gt; <span class="number">8</span>):</span><br><span class="line">                    <span class="comment"># 负溢出</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">            ans = ans * <span class="number">10</span> + pop</span><br><span class="line">            num //= <span class="number">10</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans <span class="keyword">if</span> x &gt; <span class="number">0</span> <span class="keyword">else</span> -ans</span><br></pre></td></tr></table></figure>
+<p>膜拜大佬，有个两行就解决的大佬，分析一下他的解法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">romanToInt</span><span class="params">(self, s: str)</span> -&gt; int:</span></span><br><span class="line">        d = &#123;<span class="string">'I'</span>:<span class="number">1</span>, <span class="string">'IV'</span>:<span class="number">3</span>, <span class="string">'V'</span>:<span class="number">5</span>, <span class="string">'IX'</span>:<span class="number">8</span>, <span class="string">'X'</span>:<span class="number">10</span>, <span class="string">'XL'</span>:<span class="number">30</span>, <span class="string">'L'</span>:<span class="number">50</span>, <span class="string">'XC'</span>:<span class="number">80</span>, <span class="string">'C'</span>:<span class="number">100</span>, <span class="string">'CD'</span>:<span class="number">300</span>, <span class="string">'D'</span>:<span class="number">500</span>, <span class="string">'CM'</span>:<span class="number">800</span>, <span class="string">'M'</span>:<span class="number">1000</span>&#125;</span><br><span class="line">        <span class="keyword">return</span> sum(d.get(s[max(i<span class="number">-1</span>, <span class="number">0</span>):i+<span class="number">1</span>], d[n]) <span class="keyword">for</span> i, n <span class="keyword">in</span> enumerate(s))</span><br><span class="line">        </span><br><span class="line">链接：https://leetcode-cn.com/problems/roman-to-integer/solution/<span class="number">2</span>-xing-python-on-by-knifezhu/</span><br></pre></td></tr></table></figure>
 
-<p>想起樱木花道的经典台词：安西教练，你最光荣的时候是什么时候，是在日本国家队的时候吗？而我，只有现在了！</p>
-<p>菜鸟坚持一天至少一篇，先从简单起，慢慢来吧。</p>
+<p>首先用map把各个字符的数字列出来，不过大佬与众不同的是这里用了遍历的方法，就是上面我说的每个字母之间的组合分别考虑全部列出</p>
+<p>比如，IV为4，先读I为1，再读V，IV为3，加起来就是4达到了IV是4的效果再从头到尾遍历一边就可以解决问题</p>
+<p>今日份完工！</p>
+<p>话说不知道是脑抽还是什么买了一桶比我手臂还粗的饼干，真好，能吃一年了: - )</p>
 
     </div>
 </article>
@@ -291,7 +289,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = 'leetcode - 整数反转'
+      window.commentConfig.title = 'leetcode - 罗马数字转整数'
     }
 </script>
 
@@ -460,17 +458,17 @@
 
                 
                 <li>
-                    <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/10/24/leetcode-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2019/10/24/leetcode-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/10/24/leetcode-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -478,13 +476,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 11.91060519403059px;" class="tag-cloud-link">日常</a>
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 9.866572053374668px;" class="tag-cloud-link">日常</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 9.916903331734408px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19.53742927007271px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/leetcode/" style="font-size: 13.004615154970827px;" class="tag-cloud-link">leetcode</a>
+    <a href="/tags/leetcode/" style="font-size: 18.766430073708953px;" class="tag-cloud-link">leetcode</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14.893831218210863px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 8.65103742555099px;" class="tag-cloud-link">数据库</a>
     
 </div>
                 
@@ -602,7 +600,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Wed Oct 23 2019 11:49:05 GMT+0800'
+      window.commentConfig.id = 'Thu Oct 24 2019 19:00:59 GMT+0800'
       window.commentConfig.owner = 'NomalButHappy'
       window.commentConfig.repo = 'comment'
       window.commentConfig.client_id = 'e0b4897cc1cca53c6a24'
@@ -610,7 +608,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Wed Oct 23 2019 11:49:05 GMT+0800',
+      	id: 'Thu Oct 24 2019 19:00:59 GMT+0800',
         owner: 'NomalButHappy',
         repo: 'comment',
         client_id: 'e0b4897cc1cca53c6a24',
