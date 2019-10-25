@@ -10,7 +10,7 @@
     
     
     
-    <title>categories: 日常 | badEgg</title>
+    <title>自搭hexo博客 | badEgg</title>
     <link href="https://nomalbuthappy.github.io" rel="prefetch" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -198,19 +198,31 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-category">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="https://nomalbuthappy.github.io">badEgg</a>
         >
-        <span>目录</span>
+        <span>自搭hexo博客</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/categories/%E6%97%A5%E5%B8%B8/index.html">日常</a>
+                <a href="/2019/10/25/%E8%87%AA%E6%90%ADhexo%E5%8D%9A%E5%AE%A2/">自搭hexo博客</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-10-25
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -218,21 +230,81 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/categories/%E6%97%A5%E5%B8%B8/index.html">日常</a>
+                    <a href="/2019/10/25/%E8%87%AA%E6%90%ADhexo%E5%8D%9A%E5%AE%A2/">自搭hexo博客</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-10-25
+            </p>
+            <p>
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2019/10/01/212-23%E4%BA%8B/">212 23事</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <h2 id="自搭hexo博客教程"><a href="#自搭hexo博客教程" class="headerlink" title="自搭hexo博客教程"></a>自搭hexo博客教程</h2><p>hexo是一个可以轻量方便依托于githubpage的博客，原本我是自搭博客，从前端到后台全包干，但是这样不仅自己设计上面存在问题需要不断，修改越改心越累，也没办法把全部精力留在博客质量上，所以我还是选择了hexo，还省了一个服务器，美滋滋= =</p>
+<p><strong>注</strong></p>
+<p>以下教程的操作系统是window，linux请寻找其他相应教程或等待后续教程</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
+<li><p>注册一个github账号</p>
+</li>
+<li><p>操作系统安装node.js。这个可以搜索官网免费下载安装后用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>检查是否安装成功</p>
+</li>
+<li><p>安装git，同样是搜索官网下载安装好后，用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<p>检查一下环境</p>
+</li>
+<li><p>下载3.x以后版本的hexo</p>
+<p>先创建一个文件夹用于保存hexo，然后右键gitbash，输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g                //等待进度条读完后就下载完成了</span><br><span class="line">hexo init myblog                       //初始化一个myblog，也可以是其他名字</span><br><span class="line">cd myblog                              //进入myblog文件夹</span><br><span class="line">hexo g                                 //生成博客</span><br><span class="line">hexo server                            //生成预览 默认localhost:4000可以浏览</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>新建一个仓库，在右上角的加号new repository，创建一个和用户名相同的仓库，后加.github.io</p>
+<p>只有这样在部署githubpage的时候才会被识别，所以从这个角度来说一个用户只能有一个github提供的域名</p>
+<h3 id="生成SSH并添加到github"><a href="#生成SSH并添加到github" class="headerlink" title="生成SSH并添加到github"></a>生成SSH并添加到github</h3><p>回到git bash中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;        //存入你的github用户名</span><br><span class="line">git config --global user.email &quot;youremail&quot;      //存入你注册时用的邮箱</span><br><span class="line">git config user.name                            //检查一遍你的输入</span><br><span class="line">git config user.email                           //同上</span><br><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;                //生成SSH，在电脑里找到它，返回有提示位置</span><br></pre></td></tr></table></figure>
+
+<p>其中，我们要用的是公钥公开给github，就是哪个id_rsa.pub，复制里面的内容，在右上角用户找到setting，点击找到SSH keys新建一个把id_rsa.pub复制进去，再回到gitbash</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com                           //返回success就是部署成功</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置博客"><a href="#配置博客" class="headerlink" title="配置博客"></a>配置博客</h3><p>打开myblog中的_config.yml配置文件，找到deploy，修改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>再回到gitbash</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save           //安装deploy-git用于推送到github上</span><br><span class="line">hexo clean                                     //用于清理之前生成的文件</span><br><span class="line">hexo g                                         //generate的缩写，生成博客</span><br><span class="line">hexo d                                         //deploy的缩写，部署到github</span><br></pre></td></tr></table></figure>
+
+<p>过一会儿，你就可以在<a href="http://yourname.github.io上看到你的博客了，他现在还很简单，没有内容没有主题" target="_blank" rel="noopener">http://yourname.github.io上看到你的博客了，他现在还很简单，没有内容没有主题</a></p>
+<p>内容在source/_post中添加</p>
+<p>主题可以直接找，每个主题的要求不同配置方法也不同所以基本上都有配置文档或教程</p>
+<p>以上</p>
+<p>ps</p>
+<p>有点没写好，很多瑕疵</p>
+<p>ma，算了，反正没有人看= =</p>
+<p>有点冷啊，咸鱼落泪</p>
+<p>: - )</p>
+
     </div>
 </article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = '自搭hexo博客'
+    }
+</script>
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -422,17 +494,17 @@
 
                 
                 <li>
-                    <a href="/categories/%E6%97%A5%E5%B8%B8/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/10/25/%E8%87%AA%E6%90%ADhexo%E5%8D%9A%E5%AE%A2/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/%E6%97%A5%E5%B8%B8/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2019/10/25/%E8%87%AA%E6%90%ADhexo%E5%8D%9A%E5%AE%A2/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/categories/%E6%97%A5%E5%B8%B8/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/10/25/%E8%87%AA%E6%90%ADhexo%E5%8D%9A%E5%AE%A2/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -440,13 +512,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 17.484579739430547px;" class="tag-cloud-link">日常</a>
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10.767012116982574px;" class="tag-cloud-link">日常</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 13.21438136026769px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 18.544748553705556px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/leetcode/" style="font-size: 11.405402439012164px;" class="tag-cloud-link">leetcode</a>
+    <a href="/tags/leetcode/" style="font-size: 13.418157257364312px;" class="tag-cloud-link">leetcode</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 8.751682626778873px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 18.1861140072254px;" class="tag-cloud-link">数据库</a>
     
 </div>
                 
@@ -560,5 +632,27 @@
 </script>
 <script src="/js/comment/leancloud.js"></script>
 
+
+<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Fri Oct 25 2019 16:53:06 GMT+0800'
+      window.commentConfig.owner = 'NomalButHappy'
+      window.commentConfig.repo = 'comment'
+      window.commentConfig.client_id = 'e0b4897cc1cca53c6a24'
+      window.commentConfig.client_secret = '0b72418a3830533f9f6e5cbbf9733484978dfc0c'
+      window.commentConfig.redirect_uri = ''
+    } else {
+      window.commentConfig = {
+      	id: 'Fri Oct 25 2019 16:53:06 GMT+0800',
+        owner: 'NomalButHappy',
+        repo: 'comment',
+        client_id: 'e0b4897cc1cca53c6a24',
+        client_secret: '0b72418a3830533f9f6e5cbbf9733484978dfc0c',
+        redirect_uri: ''
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
 
 </html>
