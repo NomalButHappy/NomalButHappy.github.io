@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="badEgg">
+    
+    
+    
+    
+    
+    
+    <title>数据库实验二 | badEgg</title>
+    <link href="https://nomalbuthappy.github.io" rel="prefetch" />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: '4wpgjvGxAvhfjFSItFxFNuNW-gzGzoHsz',
+        appKey: 'MFtRTn83guX0faUjf6sjIN4l'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/xhd.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://nomalbuthappy.github.io" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/comment" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://nomalbuthappy.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">badEgg</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/%E6%97%A5%E5%B8%B8/">日常</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/leetcode/">leetcode</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/comment">
+                        <i class="fa fa-list"></i>留言板
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://nomalbuthappy.github.io">badEgg</a>
+        >
+        <span>数据库实验二</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/">数据库实验二</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-11-02
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/">数据库实验二</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-11-02
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="数据库实验二"><a href="#数据库实验二" class="headerlink" title="数据库实验二"></a>数据库实验二</h2><p>实验一已经完成了，虽然有点小插曲</p>
+<p><del>我什么场面没见过</del> 这场面我真没见过</p>
+<p>事不宜迟，开始实验二</p>
+<h4 id="实验二要求"><a href="#实验二要求" class="headerlink" title="实验二要求:"></a>实验二要求:</h4><p>1．设计与建立上课考勤表****Attend_???，能登记每个学生的考勤记录包括正常、迟到、旷课、请假。能统计以专业为单位的出勤类别并进行打分评价排序，如迟到、旷课、请假分别扣2，5，1分。可以考虑给一初始的分值，以免负值。</p>
+<p>2<strong>．</strong>为major表与stud表增加sum_evaluation 数值字段，以记录根据考勤表Attend_???(Attendance)中出勤类别打分汇总的值。</p>
+<p>3．建立个人考勤汇总表stud_attend与专业考勤表major_attend，表示每个学生或每个专业在某时间周期（起始日期，终止日期）正常、迟到、旷课、请假次数及考勤分值。</p>
+<p>4．根据major表中的值与stud中的值，为考勤表Attend输入足够的样本值，要求每个专业都要有学生，有部分学生至少要有一周的每天5个单元（12，34，56，78，90，没有课的单元可以没有考勤记录）的考勤完整记录，其中<strong>正常、迟到、旷课、请假</strong> 可以用数字或字母符号表示。</p>
+<p>5．建立触发器，当对考勤表Attend表进行相应插入、删除、修改时，对stud表的sum_evaluation 数值进行相应的数据更新。</p>
+<p>6．建立过程，生成某专业某时段（起、止日期）的考勤汇总表major_attend中各字段值，并汇总相应专业，将考勤分值的汇总结果写入到major表中的sum_evaluation中。</p>
+<hr>
+<hr>
+<p>首先，这次的实验和上次不一样，几个条件之间是有关系的，为了捋清楚，我先从二这种比较明确的做起</p>
+<h4 id="增加打分汇总值"><a href="#增加打分汇总值" class="headerlink" title="增加打分汇总值"></a>增加打分汇总值</h4><p>代码如下</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> major_J314 <span class="keyword">drop</span> <span class="keyword">column</span> sum_evaluation;    //删除字段，备用</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> stud_J314 <span class="keyword">drop</span> <span class="keyword">column</span> sum_evaluation;     //删除字段，备用</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> major_J314 <span class="keyword">add</span> sum_evaluation <span class="built_in">int</span> <span class="keyword">Default</span> <span class="number">100</span> <span class="keyword">Not</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> stud_J314 <span class="keyword">add</span> sum_evaluation <span class="built_in">int</span> <span class="keyword">Default</span> <span class="number">100</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这个地方注意了，oracle必须NOT NULL 在 Default后面，不然报错= =</p>
+<h4 id="建立考勤表"><a href="#建立考勤表" class="headerlink" title="建立考勤表"></a>建立考勤表</h4><p>然后我们来捋一捋考勤表的字段与约束</p>
+<ol>
+<li>统计学生，需要学生号SNO字段</li>
+<li>考勤记录，需要记录ATTEND字段</li>
+<li>需要统计以专业为单位，需要MajorNo字段</li>
+<li>考勤需要记录时间，需要SDATE字段</li>
+<li>四中把考勤一天分为5个单元，需要UNIT字段</li>
+</ol>
+<p>建表如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> attend_J314;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> attend_J314</span><br><span class="line">(</span><br><span class="line">    SNO <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">    ATTEND <span class="built_in">int</span>,</span><br><span class="line">    MajorNo <span class="built_in">char</span>(<span class="number">20</span>),</span><br><span class="line">    SDATE <span class="built_in">date</span>,</span><br><span class="line">    UNIT <span class="built_in">varchar</span>(<span class="number">10</span>),</span><br><span class="line">    <span class="keyword">constraint</span> aj_pk</span><br><span class="line">    	primary <span class="keyword">key</span>(SNO, SDATE, UNIT)，</span><br><span class="line">    <span class="keyword">constraint</span> aj_unit</span><br><span class="line">    	<span class="keyword">check</span> (UNIT <span class="keyword">in</span> (<span class="string">'12'</span>,<span class="string">'34'</span>,<span class="string">'56'</span>,<span class="string">'78'</span>,<span class="string">'90'</span>)),</span><br><span class="line">    <span class="keyword">constraint</span> aj_attend</span><br><span class="line">    	<span class="keyword">check</span> (ATTEND <span class="keyword">in</span> (<span class="string">'0'</span>,<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'5'</span>))</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>初步建表就这样了</p>
+<p>对了，发现一个问题，千万不要在最后一个字段后面加逗号，他会把  <code>)</code> 也当作字段读入，这个和css或者一些编程语言不一样了= =</p>
+<h4 id="建立个人考勤表和专业考勤表"><a href="#建立个人考勤表和专业考勤表" class="headerlink" title="建立个人考勤表和专业考勤表"></a>建立个人考勤表和专业考勤表</h4><p>个人/专业考勤表</p>
+<ol>
+<li>个人的表需要SNO学号/专业号MajorNo</li>
+<li>需要开始日期SDate</li>
+<li>需要结束日期EDate</li>
+<li>需要正常次数NCount</li>
+<li>需要迟到次数LCount</li>
+<li>需要旷课次数ABCount</li>
+<li>需要成绩score</li>
+</ol>
+<p>开始建表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> stud_attend_J314;</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> major_attend_J314;</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> stud_attend_J314</span><br><span class="line">(</span><br><span class="line">    SNO <span class="built_in">varchar</span>(<span class="number">10</span>),</span><br><span class="line">    SDate <span class="built_in">date</span>,</span><br><span class="line">    EDate <span class="built_in">date</span>,</span><br><span class="line">    NCount <span class="built_in">int</span>,</span><br><span class="line">    LeCount <span class="built_in">int</span>,</span><br><span class="line">    LaCount <span class="built_in">int</span>,</span><br><span class="line">    ABCount <span class="built_in">int</span>,</span><br><span class="line">    <span class="keyword">constraint</span> saj_pk</span><br><span class="line">    	primary <span class="keyword">key</span>(SNO, SDate, EDate),</span><br><span class="line">    <span class="keyword">constraint</span> saj_sno_fk</span><br><span class="line">    	<span class="keyword">foreign</span> <span class="keyword">key</span>(SNO) <span class="keyword">references</span> stud_J314(SNO)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> major_attend_J314</span><br><span class="line">(</span><br><span class="line">    MajorNo <span class="built_in">varchar</span>(<span class="number">10</span>),</span><br><span class="line">    SDate <span class="built_in">date</span>,</span><br><span class="line">    EDate <span class="built_in">date</span>,</span><br><span class="line">    NCount <span class="built_in">int</span>,</span><br><span class="line">    LeCount <span class="built_in">int</span>,</span><br><span class="line">    LaCount <span class="built_in">int</span>,</span><br><span class="line">    ABCount <span class="built_in">int</span>,</span><br><span class="line">    score <span class="built_in">int</span>,</span><br><span class="line">    <span class="keyword">constraint</span> maj_pk</span><br><span class="line">    	primary <span class="keyword">key</span>(MajorNo, SDate, EDate),</span><br><span class="line">    <span class="keyword">constraint</span> maj_sno_fk</span><br><span class="line">    	<span class="keyword">foreign</span> <span class="keyword">key</span>(MajorNo) <span class="keyword">references</span> major_J314(MajorNo)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>同理，初步建表就这样了</p>
+<hr>
+<h4 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h4><p>又到了喜闻乐见的插（编）入（造）数（脑）据（洞）时间了，特别要求部分学生有一周一天五个单元的记录</p>
+<p>代码如下</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0902170314'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191028'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'56'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0902170314'</span>, <span class="string">'1'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191028'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'78'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0902170314'</span>, <span class="string">'2'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191029'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'12'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0902170314'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191029'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'78'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0902170314'</span>, <span class="string">'1'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191030'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'90'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0902170314'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191031'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'56'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0902170314'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191101'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'34'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0902170314'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191101'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'90'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0903170101'</span>, <span class="string">'5'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191028'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'56'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0903170102'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191028'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'78'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0903170102'</span>, <span class="string">'2'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191029'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'12'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0903170103'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191029'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'78'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0903170105'</span>, <span class="string">'1'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191030'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'90'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0903170108'</span>, <span class="string">'2'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191031'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'56'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0903170109'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191101'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'34'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0903170109'</span>, <span class="string">'5'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191101'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'90'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0904170101'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191028'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'56'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0904170102'</span>, <span class="string">'1'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191028'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'78'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0904170102'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191029'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'12'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0904170103'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191029'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'78'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0904170105'</span>, <span class="string">'1'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191030'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'90'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0904170108'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191031'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'56'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0904170109'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191101'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'34'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0904170109'</span>, <span class="string">'0'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191101'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'90'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>在我准备插入的时候我发现一个问题，题设要求与实际需要都要是在stud和major表有的前提下的，所以我需要在attend表加上上面两个表的外键才对，添加如下重新建表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> attend_J314;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> attend_J314</span><br><span class="line">(</span><br><span class="line">    SNO <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">    ATTEND <span class="built_in">int</span>,</span><br><span class="line">    MajorNo <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">    SDATE <span class="built_in">date</span>,</span><br><span class="line">    UNIT <span class="built_in">varchar</span>(<span class="number">10</span>),</span><br><span class="line">    <span class="keyword">constraint</span> aj_pk</span><br><span class="line">    	primary <span class="keyword">key</span>(SNO, SDATE, UNIT)，</span><br><span class="line">    <span class="keyword">constraint</span> aj_unit</span><br><span class="line">    	<span class="keyword">check</span> (UNIT <span class="keyword">in</span> (<span class="string">'12'</span>,<span class="string">'34'</span>,<span class="string">'56'</span>,<span class="string">'78'</span>,<span class="string">'90'</span>)),</span><br><span class="line">    <span class="keyword">constraint</span> aj_attend</span><br><span class="line">    	<span class="keyword">check</span> (ATTEND <span class="keyword">in</span> (<span class="string">'0'</span>,<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'5'</span>)),</span><br><span class="line">    <span class="keyword">constraint</span> aj_sno_fk</span><br><span class="line">    	<span class="keyword">foreign</span> <span class="keyword">key</span>(SNO) <span class="keyword">references</span> stud_J314(SNO),</span><br><span class="line">    <span class="keyword">constraint</span> aj_MajorNo_fk</span><br><span class="line">    	<span class="keyword">foreign</span> <span class="keyword">key</span>(MajorNo) <span class="keyword">references</span> major_J314(MajorNo)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>以此类推，stud_attend与major_attend两个表都需要加上SNO的外键约束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">constraint saj_sno_fk</span><br><span class="line">    	foreign key(SNO) references stud_J314(SNO)</span><br><span class="line">constraint maj_sno_fk</span><br><span class="line">    	foreign key(MajorNo) references major_J314(MajorNo)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<hr>
+<p>做到这一步，表，数据和关系都基本建立完成了，下一步就是触发器和过程了</p>
+<p>先是触发器，要求在对attend表修改时，对stud_attend进行相应修改，那么问题来了，我们的stud_attend表还没有插入数据，那就先做数据插入吧= =</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="string">'insert into stud_attend_J314 values ("'</span>||SNO||<span class="string">'", to_date("20190901", "YYYYMMDD"), to_date("20200101", "YYYYMMDD"), 0, 0, 0, 100);'</span> <span class="keyword">from</span> stud_J314;</span><br></pre></td></tr></table></figure>
+
+<p>在我把数据插入完后发现上一步的insert又走早了，需要先做触发器再做插入才比较好</p>
+<p>attend表触发器我的打算是，先修改stud_attend_J314表再通过stud_attend_J314表的触发器触发stud_J314的修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">create or replace trigger T_attend_J314 after insert or delete or update on attend_J314 for each row</span><br><span class="line">begin</span><br><span class="line">	if inserting then</span><br><span class="line">		update stud_J314 set sum_evaluation = sum_evaluation - :new.ATTEND where SNO = :new.SNO;</span><br><span class="line">		/*</span><br><span class="line">		if :new.ATTEND = 1 then</span><br><span class="line">			update stud_attend_J314 set LeCount = LeCount + 1 where SNO = :new.SNO;</span><br><span class="line">		elsif :new.ATTEND = 2 then</span><br><span class="line">			update stud_attend_J314 set LaCount = LaCount + 1 where SNO = :new.SNO;</span><br><span class="line">		elsif :new.ATTEND = 5 then</span><br><span class="line">			update stud_attend_J314 set ABCount = ABCount + 1 where SNO = :new.SNO;</span><br><span class="line">		elsif :new.ATTEND = 0 then</span><br><span class="line">			update stud_attend_J314 set NCount = NCount + 1 where SNO = :new.SNO;</span><br><span class="line">		end if;</span><br><span class="line">		*/</span><br><span class="line">	elsif deleting then</span><br><span class="line">		update stud_J314 set sum_evaluation = sum_evaluation + :old.ATTEND where SNO = :old.SNO;</span><br><span class="line">		/*</span><br><span class="line">		if :old.ATTEND = 1 then</span><br><span class="line">			update stud_attend_J314 set LeCount = LeCount - 1 where SNO = :old.SNO;</span><br><span class="line">		elsif :old.ATTEND = 2 then</span><br><span class="line">			update stud_attend_J314 set LaCount = LaCount - 1 where SNO = :old.SNO;</span><br><span class="line">		elsif :old.ATTEND = 5 then</span><br><span class="line">			update stud_attend_J314 set ABCount = ABCount - 1 where SNO = :old.SNO;</span><br><span class="line">		elsif :old.ATTEND = 0 then</span><br><span class="line">			update stud_attend_J314 set NCount = NCount - 1 where SNO = :old.SNO;</span><br><span class="line">		end if;</span><br><span class="line">		*/</span><br><span class="line">	elsif updating then</span><br><span class="line">		update stud_J314 set sum_evaluation = sum_evaluation - :new.ATTEND where SNO = :new.SNO;</span><br><span class="line">		update stud_J314 set sum_evaluation = sum_evaluation + :old.ATTEND where SNO = :old.SNO;</span><br><span class="line">		/*</span><br><span class="line">		if :old.ATTEND = 1 then</span><br><span class="line">			update stud_attend_J314 set LeCount = LeCount - 1 where SNO = :old.SNO;</span><br><span class="line">		elsif :old.ATTEND = 2 then</span><br><span class="line">			update stud_attend_J314 set LaCount = LaCount - 1 where SNO = :old.SNO;</span><br><span class="line">		elsif :old.ATTEND = 5 then</span><br><span class="line">			update stud_attend_J314 set ABCount = ABCount - 1 where SNO = :old.SNO;</span><br><span class="line">		elsif :old.ATTEND = 0 then</span><br><span class="line">			update stud_attend_J314 set NCount = NCount - 1 where SNO = :old.SNO;</span><br><span class="line">		end if;</span><br><span class="line">		</span><br><span class="line">		if :new.ATTEND = 1 then</span><br><span class="line">			update stud_attend_J314 set LeCount = LeCount + 1 where SNO = :new.SNO;</span><br><span class="line">		elsif :new.ATTEND = 2 then</span><br><span class="line">			update stud_attend_J314 set LaCount = LaCount + 1 where SNO = :new.SNO;</span><br><span class="line">		elsif :new.ATTEND = 5 then</span><br><span class="line">			update stud_attend_J314 set ABCount = ABCount + 1 where SNO = :new.SNO;</span><br><span class="line">		elsif :new.ATTEND = 0 then</span><br><span class="line">			update stud_attend_J314 set NCount = NCount + 1 where SNO = :new.SNO;</span><br><span class="line">		end if;</span><br><span class="line">		*/</span><br><span class="line">	end if;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+
+<p>插入就不测试了，上面的都是例子，我们测试一下修改与删除</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> attend_J314 <span class="keyword">where</span> SNO = <span class="string">'0904170105'</span>;</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> attend_J314 <span class="keyword">values</span>(<span class="string">'0904170105'</span>, <span class="string">'1'</span>, <span class="string">'02'</span>, <span class="keyword">to_date</span>(<span class="string">'20191030'</span>, <span class="string">'YYYYMMDD'</span>), <span class="string">'90'</span>);</span><br><span class="line"><span class="keyword">update</span> attend_J314 <span class="keyword">set</span> ATTEND = <span class="number">5</span> <span class="keyword">where</span> SNO = <span class="string">'0904170105'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>左调右调应该没什么问题了= =</p>
+<p>下一步是建立一个过程，过程就是一个搜索并更新的过程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">create or replace procedure p_attend_J314</span><br><span class="line">(</span><br><span class="line">    Num in char,</span><br><span class="line"> 	s_date in date,</span><br><span class="line">    e_date in date</span><br><span class="line">)is</span><br><span class="line">a int := 0;</span><br><span class="line">scount int := 0;</span><br><span class="line">normal int := 0;</span><br><span class="line">leave int := 0;</span><br><span class="line">late int := 0;</span><br><span class="line">absent int := 0;</span><br><span class="line">begin</span><br><span class="line">	for attend in (select ATTEND from attend_J314 where MajorNo = Num and SDATE &gt;= s_date and SDATE &lt;= e_date)loop</span><br><span class="line">		scount := scount + 1;</span><br><span class="line">		if attend.ATTEND = 0 then</span><br><span class="line">			normal := normal + 1;</span><br><span class="line">		elsif attend.ATTEND = 1 then</span><br><span class="line">			leave := leave + 1;</span><br><span class="line">		elsif attend.ATTEND = 2 then</span><br><span class="line">			late := late + 1;</span><br><span class="line">		elsif attend.ATTEND = 5 then</span><br><span class="line">			absent := absent + 1;</span><br><span class="line">		end if;</span><br><span class="line">	end loop;</span><br><span class="line">	scount := (scount * 100 - leave - late * 2 - absent * 5) / scount;</span><br><span class="line">	insert into major_attend_J314 values(Num, s_date, e_date, normal, leave, late, absent, scount);</span><br><span class="line">end p_attend_J314;</span><br></pre></td></tr></table></figure>
+
+<p>下面就是对过程的测试了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec p_attend_J314(&apos;02&apos;,&apos;20-10月-2019&apos;,&apos;03-11月-2019&apos;);</span><br></pre></td></tr></table></figure>
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = '数据库实验二'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            badEgg
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/xhd.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/">数据库实验二</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/31/leetcode-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">leetcode - 有效的括号</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">leetcode - 合并两个有序链表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/27/leetcode-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">leetcode - 两数相加</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/25/%E8%87%AA%E6%90%ADhexo%E5%8D%9A%E5%AE%A2/">自搭hexo博客</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/25/leetcode-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/">leetcode - 最长公共前缀</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/24/leetcode-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/">leetcode - 罗马数字转整数</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">数据库实验 - oracle</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">leetcode - 整数反转</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/27/leetcode-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">leetcode - 两数相加</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">leetcode - 合并两个有序链表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/leetcode-%E5%9B%9E%E6%96%87%E6%95%B0/">leetcode - 回文数</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">leetcode - 整数反转</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/25/leetcode-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/">leetcode - 最长公共前缀</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/24/leetcode-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/">leetcode - 罗马数字转整数</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/25/%E8%87%AA%E6%90%ADhexo%E5%8D%9A%E5%AE%A2/">自搭hexo博客</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">数据库实验 - oracle</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/">数据库实验二</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10.759674551912362px;" class="tag-cloud-link">日常</a>
+    
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10.681636311854227px;" class="tag-cloud-link">算法</a>
+    
+    <a href="/tags/leetcode/" style="font-size: 11.805372495233733px;" class="tag-cloud-link">leetcode</a>
+    
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 15.291643856055753px;" class="tag-cloud-link">数据库</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 badEgg Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
+
+
+<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Sat Nov 02 2019 20:56:41 GMT+0800'
+      window.commentConfig.owner = 'NomalButHappy'
+      window.commentConfig.repo = 'comment'
+      window.commentConfig.client_id = 'e0b4897cc1cca53c6a24'
+      window.commentConfig.client_secret = '0b72418a3830533f9f6e5cbbf9733484978dfc0c'
+      window.commentConfig.redirect_uri = ''
+    } else {
+      window.commentConfig = {
+      	id: 'Sat Nov 02 2019 20:56:41 GMT+0800',
+        owner: 'NomalButHappy',
+        repo: 'comment',
+        client_id: 'e0b4897cc1cca53c6a24',
+        client_secret: '0b72418a3830533f9f6e5cbbf9733484978dfc0c',
+        redirect_uri: ''
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
+
+</html>
