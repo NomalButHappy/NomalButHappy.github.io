@@ -10,7 +10,7 @@
     
     
     
-    <title>leetcode - 字符串转换整数 (atoi) | badEgg</title>
+    <title>leetcode - 报数 | badEgg</title>
     <link href="https://nomalbuthappy.github.io" rel="prefetch" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -223,13 +223,13 @@
         <i class="fa fa-home"></i>
         <a href="https://nomalbuthappy.github.io">badEgg</a>
         >
-        <span>leetcode - 字符串转换整数 (atoi)</span>
+        <span>leetcode - 报数</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/">leetcode - 字符串转换整数 (atoi)</a>
+                <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/">leetcode - 报数</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -244,7 +244,7 @@
             </span>
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2019-11-11
+                <i class="fa fa-calendar"></i> 2019-11-21
             </span>
             
             <span class="label label-gal">
@@ -258,11 +258,11 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/">leetcode - 字符串转换整数 (atoi)</a>
+                    <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/">leetcode - 报数</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2019-11-11
+                <i class="fa fa-calendar"></i> 2019-11-21
             </p>
             <p>
                 
@@ -280,24 +280,19 @@
         </center>
     </div>
     <div class="content-article">
-        <h2 id="leetcode-字符串转换整数-atoi"><a href="#leetcode-字符串转换整数-atoi" class="headerlink" title="leetcode: 字符串转换整数 (atoi)"></a>leetcode: <a href="https://leetcode-cn.com/problems/string-to-integer-atoi/" target="_blank" rel="noopener">字符串转换整数 (atoi)</a></h2><p>请你来实现一个 atoi 函数，使其能将字符串转换成整数。</p>
-<p>首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。</p>
-<p>当我们寻找到的第一个非空字符为正或者负号时，则将该符号与之后面尽可能多的连续数字组合起来，作为该整数的正负号；假如第一个非空字符是数字，则直接将其与之后连续的数字字符组合起来，形成整数。</p>
-<p>该字符串除了有效的整数部分之后也可能会存在多余的字符，这些字符可以被忽略，它们对于函数不应该造成影响。</p>
-<p>注意：假如该字符串中的第一个非空格字符不是一个有效整数字符、字符串为空或字符串仅包含空白字符时，则你的函数不需要进行转换。</p>
-<p>在任何情况下，若函数不能进行有效的转换时，请返回 0。</p>
-<p>说明：</p>
-<p>假设我们的环境只能存储 32 位大小的有符号整数，那么其数值范围为 [−231,  231 − 1]。如果数值超过这个范围，请返回  INT_MAX (231 − 1) 或 INT_MIN (−231) 。</p>
-<hr>
-<p>这一题是需要实现一个函数，函数内容就是把字符串转为整数，在c/c++中有一个atoi的函数就是这个功能（to int），那么我们来分析一下这一题的方法</p>
-<p>首先，需要丢弃无用开头空格，我们可以用之前提到过的strip来去头去尾的空格</p>
-<p>然后第一个字符可能是正负号，后面是连续的数字，这一部分就需要用到正则表达式了</p>
-<p>感谢这一题，让我回想起了被正则表达式支配的恐惧</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">myAtoi</span><span class="params">(self, str)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type str: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        str1 = <span class="string">""</span></span><br><span class="line">        str1 = str.strip(<span class="string">" "</span>)</span><br><span class="line">        str1 = int(*re.findall(<span class="string">'^[\+\-]?\d+'</span>, str1))</span><br><span class="line">        <span class="keyword">return</span> min(max(str1, <span class="number">-2</span>**<span class="number">31</span>), <span class="number">2</span>**<span class="number">31</span><span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+        <h2 id="leetcode-报数"><a href="#leetcode-报数" class="headerlink" title="leetcode: 报数"></a>leetcode: <a href="https://leetcode-cn.com/problems/count-and-say/" target="_blank" rel="noopener">报数</a></h2><p>报数序列是一个整数序列，按照其中的整数的顺序进行报数，得到下一个数。其前五项如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.     1</span><br><span class="line">2.     11</span><br><span class="line">3.     21</span><br><span class="line">4.     1211</span><br><span class="line">5.     111221</span><br></pre></td></tr></table></figure>
 
-<p>这段正则表达式是和评论多次印证和比较得出来的（对不起，我太菜了= =），功能就是^从字符串开头[\+\-]?可能有一个加号或者减号，\d+后面有多个数字</p>
-<p>大致上这里就完成了，后面的就是判断一下范围</p>
-<p>ok，这周事情多，身体还被体测搞废了，尽量不断吧。</p>
+<p>1 被读作  “one 1”  (“一个一”) , 即 11。<br>11 被读作 “two 1s” (“两个一”）, 即 21。<br>21 被读作 “one 2”,  “one 1” （”一个二” ,  “一个一”) , 即 1211。</p>
+<p>给定一个正整数 n（1 ≤ n ≤ 30），输出报数序列的第 n 项。</p>
+<p>注意：整数顺序将表示为一个字符串。</p>
+<p>这一题看起来有点迷。主要是做一个循环不断让下一个表示上一段的数字</p>
+<p>好的，既然是简单的循环，我们就来看看代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countAndSay</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        s = <span class="string">"1"</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n+<span class="number">1</span>):</span><br><span class="line">            count = <span class="number">0</span></span><br><span class="line">            a = s[<span class="number">0</span>]</span><br><span class="line">            temp = <span class="string">""</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> s:</span><br><span class="line">                <span class="keyword">if</span> a == j:</span><br><span class="line">                    count += <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    temp += str(count) + a</span><br><span class="line">                    count = <span class="number">1</span></span><br><span class="line">                    a = j</span><br><span class="line">            temp += str(count) + a</span><br><span class="line">            s = temp</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> s</span><br></pre></td></tr></table></figure>
+
+<p>中规中矩，循环通过，时间复杂度为一个n^2 ? 这个复杂度可能不止，但是有一个我万万没想到的方法就是看到了n的范围，那么把从1 到 30都列一遍时间复杂度就是    1    ！！！？？？</p>
+<p>虽然没必要但是确实很屌= =</p>
+<p>今天也是一条咸鱼呢，快乐咸鱼每一天！</p>
 
     </div>
 </article>
@@ -308,7 +303,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = 'leetcode - 字符串转换整数 (atoi)'
+      window.commentConfig.title = 'leetcode - 报数'
     }
 </script>
 
@@ -456,12 +451,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/">leetcode - 报数</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2019/10/01/212-23%E4%BA%8B/">212 23事</a>
                 </span>
             </li>
@@ -469,12 +458,6 @@
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2019/11/16/leetcode%20-%20%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/">leetcode - 搜索插入位置</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/10/27/leetcode-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">leetcode - 两数相加</a>
                 </span>
             </li>
             
@@ -492,7 +475,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/25/leetcode-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/">leetcode - 最长公共前缀</a>
+                    <a href="/2019/11/06/leetcode-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E6%AE%B5/">leetcode - 无重复字符的最长子串</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/31/leetcode-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">leetcode - 有效的括号</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/12/leetcode-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/">leetcode - 盛最多水的容器</a>
                 </span>
             </li>
             
@@ -525,17 +520,17 @@
 
                 
                 <li>
-                    <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -543,13 +538,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.351733242000147px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 9.676008276321333px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/leetcode/" style="font-size: 17.48340551835777px;" class="tag-cloud-link">leetcode</a>
+    <a href="/tags/leetcode/" style="font-size: 14.997587123731911px;" class="tag-cloud-link">leetcode</a>
     
-    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 12.584903949645966px;" class="tag-cloud-link">日常</a>
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 8.411007785428328px;" class="tag-cloud-link">日常</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14.964360747881102px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 9.805972527546619px;" class="tag-cloud-link">数据库</a>
     
 </div>
                 
@@ -669,7 +664,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Mon Nov 11 2019 19:40:55 GMT+0800'
+      window.commentConfig.id = 'Thu Nov 21 2019 16:40:41 GMT+0800'
       window.commentConfig.owner = 'NomalButHappy'
       window.commentConfig.repo = 'comment'
       window.commentConfig.client_id = 'e0b4897cc1cca53c6a24'
@@ -677,7 +672,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Mon Nov 11 2019 19:40:55 GMT+0800',
+      	id: 'Thu Nov 21 2019 16:40:41 GMT+0800',
         owner: 'NomalButHappy',
         repo: 'comment',
         client_id: 'e0b4897cc1cca53c6a24',
