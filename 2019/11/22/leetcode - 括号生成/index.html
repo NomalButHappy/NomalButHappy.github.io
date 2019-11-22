@@ -10,7 +10,7 @@
     
     
     
-    <title>404 | badEgg</title>
+    <title>leetcode - 括号生成 | badEgg</title>
     <link href="https://nomalbuthappy.github.io" rel="prefetch" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -217,10 +217,97 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <!-- 搜索页面(尽可能接近ZanBlog搜索功能) -->
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://nomalbuthappy.github.io">badEgg</a>
+        >
+        <span>leetcode - 括号生成</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/11/22/leetcode%20-%20%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">leetcode - 括号生成</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>, 
+                
+                <a href="/tags/leetcode/">leetcode</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-11-22
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/11/22/leetcode%20-%20%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">leetcode - 括号生成</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-11-22
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>, 
+                
+                <a href="/tags/leetcode/">leetcode</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="leetcode-括号生成"><a href="#leetcode-括号生成" class="headerlink" title="leetcode: 括号生成"></a>leetcode: <a href="https://leetcode-cn.com/problems/generate-parentheses/" target="_blank" rel="noopener">括号生成</a></h2><p>给出 n 代表生成括号的对数，请你写出一个函数，使其能够生成所有可能的并且有效的括号组合。</p>
+<p>例如，给出 n = 3，生成结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &quot;((()))&quot;,</span><br><span class="line">  &quot;(()())&quot;,</span><br><span class="line">  &quot;(())()&quot;,</span><br><span class="line">  &quot;()(())&quot;,</span><br><span class="line">  &quot;()()()&quot;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
-<!-- 404 自定义页面 -->
-<!-- 有其他想自定义的page在这里添加判断条件, 并且写好对应的模板渲染文件 -->
+<p>这一题是从一道简单题推过来的，那道题是这样，判断一个括号串是否有效，当时用的是栈的知识，那么这一题的区别就在找到括号生成的规律，现在我们可以分析一下它的规律了</p>
+<ol>
+<li>首先长度肯定是两倍给出的n</li>
+<li>左括号与右括号相等</li>
+<li>在任何位置左括号数都要大于等于右括号</li>
+</ol>
+<p>好的，那么为了列出这所有的可能，我们需要用到回溯法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateParenthesis</span><span class="params">(self, N)</span>:</span></span><br><span class="line">        ans = []</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">backtrack</span><span class="params">(S = <span class="string">''</span>, left = <span class="number">0</span>, right = <span class="number">0</span>)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> len(S) == <span class="number">2</span> * N:</span><br><span class="line">                ans.append(S)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="keyword">if</span> left &lt; N:</span><br><span class="line">                backtrack(S+<span class="string">'('</span>, left+<span class="number">1</span>, right)</span><br><span class="line">            <span class="keyword">if</span> right &lt; left:</span><br><span class="line">                backtrack(S+<span class="string">')'</span>, left, right+<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        backtrack()</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+
+<p>回溯法是指比如走迷宫有很多路，我们需要一个一个路的探，通了就是一个结果，为了实现这个算法思想，我们一般用递归的思路来完成他。</p>
+<p>好的，又是一条咸鱼，不过本欧皇昨天抽奖抽到一个异色初音，可以来一期开箱博客= =。</p>
+
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'leetcode - 括号生成'
+    }
+</script>
 
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
@@ -366,19 +453,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/">leetcode - 字符串转换整数 (atoi)</a>
+                    <a href="/2019/11/07/leetcode%20-%20%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/">leetcode - 移除元素</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/05/leetcode-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/">leetcode - 删除排序数组中的重复项</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/10/27/leetcode-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">leetcode - 两数相加</a>
+                    <a href="/2019/10/23/leetcode-%E5%9B%9E%E6%96%87%E6%95%B0/">leetcode - 回文数</a>
                 </span>
             </li>
             
@@ -390,7 +471,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/08/leetcode-%E5%AE%9E%E7%8E%B0%20strStr()/">leetcode - 实现 strStr()</a>
+                    <a href="/2019/11/06/leetcode-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E6%AE%B5/">leetcode - 无重复字符的最长子串</a>
                 </span>
             </li>
             
@@ -414,13 +495,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
+                    <a href="/2019/10/24/leetcode-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/">leetcode - 罗马数字转整数</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2019/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">数据库实验 - oracle</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/">数据库实验二</a>
                 </span>
             </li>
             
@@ -435,17 +522,17 @@
 
                 
                 <li>
-                    <a href="/404/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2019/11/22/leetcode%20-%20%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/404/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2019/11/22/leetcode%20-%20%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/404/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2019/11/22/leetcode%20-%20%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -453,13 +540,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 15.182747809827566px;" class="tag-cloud-link">日常</a>
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 8.86856461750525px;" class="tag-cloud-link">日常</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19.1583712885729px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 17.918070365876474px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/leetcode/" style="font-size: 9.482415230744277px;" class="tag-cloud-link">leetcode</a>
+    <a href="/tags/leetcode/" style="font-size: 18.104562327697987px;" class="tag-cloud-link">leetcode</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.964114150510323px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13.309414045057782px;" class="tag-cloud-link">数据库</a>
     
 </div>
                 
@@ -579,7 +666,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Wed Oct 23 2019 11:19:08 GMT+0800'
+      window.commentConfig.id = 'Fri Nov 22 2019 19:30:29 GMT+0800'
       window.commentConfig.owner = 'NomalButHappy'
       window.commentConfig.repo = 'comment'
       window.commentConfig.client_id = 'e0b4897cc1cca53c6a24'
@@ -587,7 +674,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Wed Oct 23 2019 11:19:08 GMT+0800',
+      	id: 'Fri Nov 22 2019 19:30:29 GMT+0800',
         owner: 'NomalButHappy',
         repo: 'comment',
         client_id: 'e0b4897cc1cca53c6a24',
