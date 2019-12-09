@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="badEgg">
+    
+    
+    
+    
+    
+    
+    <title>数据库实验 - oracle | badEgg</title>
+    <link href="https://nomalbuthappy.github.io" rel="prefetch" />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <script src="//cdn1.lncld.net/static/js/3.4.2/av-min.js"></script>
+    <script>
+      AV.init({
+        appId: '4wpgjvGxAvhfjFSItFxFNuNW-gzGzoHsz',
+        appKey: 'MFtRTn83guX0faUjf6sjIN4l'
+      })
+    </script>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/xhd.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://nomalbuthappy.github.io" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/comment" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://nomalbuthappy.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">badEgg</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%89%8B%E5%8A%9E/">手办</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/%E6%97%A5%E5%B8%B8/">日常</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/leetcode/">leetcode</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/comment">
+                        <i class="fa fa-list"></i>留言板
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://nomalbuthappy.github.io">badEgg</a>
+        >
+        <span>数据库实验 - oracle</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%88%E6%94%B9%EF%BC%89/">数据库实验 - oracle</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-12-09
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%88%E6%94%B9%EF%BC%89/">数据库实验 - oracle</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-12-09
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="数据库实验三"><a href="#数据库实验三" class="headerlink" title="数据库实验三"></a>数据库实验三</h2><p>吐血= =过几天生日家里要来人，还有这么多实验作业，惹不起惹不起</p>
+<h4 id="实验三要求"><a href="#实验三要求" class="headerlink" title="实验三要求:"></a>实验三要求:</h4><p>1.以常用“名字大全”与“百家姓”数据集为基础，生成不小于1千万条stud记录，要求，姓名的重复率不超过10%，学号以ABCD17EFGH为格式模板，即其中17是固定的，AB为从01到80，CD为从01到90，EF为01到50，GH为01到32；性别中，男、女占比为99%到99.5%。TEL与E-mail不作要求，但不能全空。Birthday要求从‘19940101’到‘19990731’分布。要求记录ORACLE数据文件的大小变化。（需要编制过程）</p>
+<p>2．分别测试stud有主键与没有主键情形下生成记录的时间。</p>
+<p>3．建立基于sname的索引index_name，测试建立的时间与建立索引前后查询某一姓名及某一姓的时间长度。</p>
+<p>4．测试索引index_name建立前后，分姓（简单地理解为姓名的第1，2位）的记录数统计时间。</p>
+<p>5．按学号首位建立10个分区分别为part_0到part_9，测试建立分区前后分首位统计人数与分专业（EF位）统计人数的时间差别。</p>
+<hr>
+<p>要求一需要1千万以上的stud记录并有各种各样的要求，那么就需要先编造这一千万条数据，上次做的时候用了常用姓 X 常用字 X 常用字的笛卡儿积，那么就出了一个问题，常用字的数据集合是3000，那么名部分的 3000 X 3000 = 0.9kw，我们一共需要1kw数据，而第一个名字就占了0.9kw，这样明显不太行，所以我们需要另一个合理的编造数据方法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--先建立学生表用于导入数据</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> student_J314;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student_J314(</span><br><span class="line">    sno <span class="built_in">char</span>(<span class="number">10</span>) primary <span class="keyword">key</span>,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">10</span>),</span><br><span class="line">    sex <span class="built_in">varchar</span>(<span class="number">2</span>),</span><br><span class="line">    tel <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">    e_mail <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">    birthday <span class="built_in">date</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">set</span> TIMING <span class="keyword">on</span>;                             <span class="comment">--康康等下的运行花了多少时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--导入数据</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> first_name;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> first_name(</span><br><span class="line">    fname <span class="built_in">varchar</span>(<span class="number">5</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> second_name;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> second_name(</span><br><span class="line">	sname <span class="built_in">varchar</span>(<span class="number">5</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">name</span>(</span><br><span class="line">	<span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">10</span>)</span><br><span class="line">);</span><br><span class="line"><span class="comment">--由于数据源在excel里，我们需要先导出来，求不出错一个一个来</span></span><br><span class="line"><span class="comment">--first_name</span></span><br><span class="line"><span class="keyword">load</span> <span class="keyword">data</span></span><br><span class="line"><span class="keyword">infile</span> <span class="string">'d:\blog\first.csv'</span></span><br><span class="line">append <span class="keyword">into</span> <span class="keyword">table</span> first_name <span class="keyword">fields</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">','</span></span><br><span class="line">trailing nullcols(fname)</span><br><span class="line">&gt; sqlldr userid = U_J314/YcYyj1234 control = d:\blog\load.ctl</span><br><span class="line"><span class="comment">--415条记录</span></span><br><span class="line"><span class="comment">--second_name</span></span><br><span class="line"><span class="keyword">load</span> <span class="keyword">data</span></span><br><span class="line"><span class="keyword">infile</span> <span class="string">'d:\blog\second.csv'</span></span><br><span class="line">append <span class="keyword">into</span> <span class="keyword">table</span> second_name <span class="keyword">fields</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">','</span></span><br><span class="line">trailing nullcols(sname)</span><br><span class="line">&gt; sqlldr userid = U_J314/YcYyj1234 control = d:\blog\second.ctl</span><br><span class="line"><span class="comment">--3177条记录</span></span><br><span class="line"><span class="comment">--姓和名都有了现在就需要来随机组合成名字了（编数据都要编得这么麻烦，没法吐槽了）</span></span><br><span class="line"><span class="comment">--我创建一个生成随机名字的过程，为了防止出现某个姓的名字过多，这次我就用111 * 111 * 999的方法生成不少于一千万条数据(实际上我是生成了11111111条数据)</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">procedure</span> P_name_J314;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">procedure</span> P_name_J314</span><br><span class="line"><span class="keyword">is</span></span><br><span class="line">	cnt PLS_INTEGER:=<span class="number">1</span>;</span><br><span class="line">	first varchar(5);</span><br><span class="line">	second varchar(5);</span><br><span class="line">	third varchar(5);</span><br><span class="line">	maxl PLS_INTEGER:=11111111;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">FOR</span> a <span class="keyword">in</span> (<span class="keyword">select</span> * <span class="keyword">from</span> first_name <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;=<span class="number">100</span>)</span><br><span class="line">		<span class="keyword">loop</span> <span class="keyword">exit</span> <span class="keyword">when</span> cnt &gt; maxl;</span><br><span class="line">		first:=a.fname;</span><br><span class="line">		FOR b in (<span class="keyword">select</span> * <span class="keyword">from</span> second_name <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;=<span class="number">101</span>)</span><br><span class="line">			<span class="keyword">loop</span> <span class="keyword">exit</span> <span class="keyword">when</span> cnt &gt; maxl;</span><br><span class="line">			second:=b.sname;</span><br><span class="line">			FOR c in (<span class="keyword">select</span> * <span class="keyword">from</span> second_name <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;=<span class="number">1001</span>)</span><br><span class="line">				<span class="keyword">loop</span> <span class="keyword">exit</span> <span class="keyword">when</span> cnt &gt; maxl;</span><br><span class="line">				third := c.sname;</span><br><span class="line">				<span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">name</span> <span class="keyword">values</span> (<span class="keyword">first</span>||<span class="keyword">second</span>||third);</span><br><span class="line">				cnt := cnt + 1;</span><br><span class="line">			<span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line">		<span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line">	<span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line"><span class="keyword">END</span>;</span><br><span class="line">.</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">--现在我们来建立插入数据的过程</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">procedure</span> P_student_J314;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">procedure</span> P_student_J314</span><br><span class="line"><span class="keyword">is</span></span><br><span class="line">	cnt PLS_INTEGER:=<span class="number">1</span>;</span><br><span class="line">	msno varchar(10);</span><br><span class="line">	mname varchar(10);</span><br><span class="line">	msex varchar(2);</span><br><span class="line">	mtel varchar(20);</span><br><span class="line">	me_mail varchar(20);</span><br><span class="line">	mbirthday date;</span><br><span class="line">	</span><br><span class="line">	rsex PLS_INTEGER;</span><br><span class="line">	rdate PLS_INTEGER;</span><br><span class="line">	maxl PLS_INTEGER:=10001111;</span><br><span class="line">	dif PLS_INTEGER;</span><br><span class="line">	</span><br><span class="line">	cursor c_name is (<span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> <span class="keyword">name</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	dif := <span class="keyword">ROUND</span>(TO_NUMBER(<span class="keyword">to_date</span>(<span class="string">'19990731'</span>, <span class="string">'YYYYMMDD'</span>) - <span class="keyword">to_date</span>(<span class="string">'19940101'</span>, <span class="string">'YYYYMMDD'</span>)));</span><br><span class="line">	OPEN c_name;</span><br><span class="line">	for ab in 1..80</span><br><span class="line">		LOOP EXIT WHEN cnt &gt; maxl;</span><br><span class="line">		for cd in 1..90</span><br><span class="line">			LOOP EXIT WHEN cnt &gt; maxl;</span><br><span class="line">			for ef in 1..50</span><br><span class="line">				LOOP EXIT WHEN cnt &gt; maxl;</span><br><span class="line">				for gh in 1..32</span><br><span class="line">					LOOP EXIT WHEN cnt &gt; maxl;</span><br><span class="line">					</span><br><span class="line">					FETCH c_name INTO mname;</span><br><span class="line">					rsex := DBMS_RANDOM.VALUE(1,1000);   <span class="comment">--随机性别，并把比例分好</span></span><br><span class="line">					if rsex &lt;= 496</span><br><span class="line">						then msex := '男';</span><br><span class="line">					elsif rsex &lt;= 993</span><br><span class="line">						then msex := '女';</span><br><span class="line">					else</span><br><span class="line">						msex := '无';</span><br><span class="line">					<span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">					</span><br><span class="line">					rdate := DBMS_RANDOM.VALUE(0,dif);    <span class="comment">--通过时间差来随机日期</span></span><br><span class="line">					mbirthday := to_date('19940101', 'YYYYMMDD') + rdate;</span><br><span class="line">					</span><br><span class="line">					<span class="keyword">insert</span> <span class="keyword">into</span> student_J314 <span class="keyword">values</span>(TO_CHAR(ab,<span class="string">'FM09'</span>)||TO_CHAR(cd,<span class="string">'FM09'</span>)||<span class="string">'17'</span>||TO_CHAR(ef,<span class="string">'FM09'</span>)||TO_CHAR(gh,<span class="string">'FM09'</span>), mname, msex, <span class="string">'123456'</span>, <span class="string">'321654'</span>, mbirthday);</span><br><span class="line">					</span><br><span class="line">					cnt := cnt + 1;</span><br><span class="line">					</span><br><span class="line">				<span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line">			<span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line">		<span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line">	<span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line"><span class="keyword">END</span>;</span><br><span class="line">.</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="comment">--然后，我们先查看数据文件的大小，这一句是查看数据文件路径</span></span><br><span class="line"><span class="keyword">select</span> file_name , tablespace_name <span class="keyword">from</span> dba_data_files;</span><br><span class="line"></span><br><span class="line"><span class="comment">--下一步就是插入</span></span><br><span class="line">exec P_student_J314;</span><br><span class="line"></span><br><span class="line"><span class="comment">--时间空间变化如下</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="2-要求有主键与没主键生成记录的时间比较"><a href="#2-要求有主键与没主键生成记录的时间比较" class="headerlink" title="2 要求有主键与没主键生成记录的时间比较"></a>2 要求有主键与没主键生成记录的时间比较</h3><p>那就是再插入一次没主键的咯，有主键要判断主键约束，所以按道理来说没主键会快一些</p>
+<p>下面是结果，果然是没主键快一些</p>
+<h3 id="3-要求建立基于sname的索引，并比较建立前后"><a href="#3-要求建立基于sname的索引，并比较建立前后" class="headerlink" title="3 要求建立基于sname的索引，并比较建立前后"></a>3 要求建立基于sname的索引，并比较建立前后</h3><p>既然要比较建立索引的前后，所以我先把建立前的时间长度做好</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> student_J314 <span class="keyword">where</span> sno=<span class="string">'0302170101'</span>;       <span class="comment">--可以看到这个人叫云夫步</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> student_J314 <span class="keyword">where</span> <span class="keyword">name</span>=<span class="string">'云夫步'</span>;          </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> student_J314 <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">'云%'</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> student_J314 <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">'云夫%'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> index_name <span class="keyword">on</span> student_J314(<span class="keyword">name</span>);</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> student_J314 <span class="keyword">where</span> <span class="keyword">name</span>=<span class="string">'云夫步'</span>;          </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> student_J314 <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">'云%'</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> student_J314 <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">'云夫%'</span>;</span><br><span class="line"><span class="comment">--运行过程及时间如下，显然建立索引后速度快得多</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-分区0-9，分首位统计与分专业统计的差别"><a href="#4-分区0-9，分首位统计与分专业统计的差别" class="headerlink" title="4 分区0-9，分首位统计与分专业统计的差别"></a>4 分区0-9，分首位统计与分专业统计的差别</h3><p>完蛋，现在要分区，就要把之前建好的表删掉重建，早知道就把之前的数据分别存好了</p>
+<p>那么就从删表与重建开始</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> student_J314;</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> student_J314;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student_J314(</span><br><span class="line">    sno <span class="built_in">char</span>(<span class="number">10</span>) primary <span class="keyword">key</span>,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">10</span>),</span><br><span class="line">    sex <span class="built_in">varchar</span>(<span class="number">2</span>),</span><br><span class="line">    tel <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">    e_mail <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">    birthday <span class="built_in">date</span></span><br><span class="line">)<span class="keyword">partition</span> <span class="keyword">by</span> <span class="keyword">range</span>(sno)(</span><br><span class="line">	<span class="keyword">partition</span> part_0 <span class="keyword">values</span> <span class="keyword">less</span> <span class="keyword">than</span> (<span class="string">'1000000000'</span>),</span><br><span class="line">	<span class="keyword">partition</span> part_1 <span class="keyword">values</span> <span class="keyword">less</span> <span class="keyword">than</span> (<span class="string">'2000000000'</span>),</span><br><span class="line">	<span class="keyword">partition</span> part_2 <span class="keyword">values</span> <span class="keyword">less</span> <span class="keyword">than</span> (<span class="string">'3000000000'</span>),</span><br><span class="line">	<span class="keyword">partition</span> part_3 <span class="keyword">values</span> <span class="keyword">less</span> <span class="keyword">than</span> (<span class="string">'4000000000'</span>),</span><br><span class="line">	<span class="keyword">partition</span> part_4 <span class="keyword">values</span> <span class="keyword">less</span> <span class="keyword">than</span> (<span class="string">'5000000000'</span>),</span><br><span class="line">	<span class="keyword">partition</span> part_5 <span class="keyword">values</span> <span class="keyword">less</span> <span class="keyword">than</span> (<span class="string">'6000000000'</span>),</span><br><span class="line">	<span class="keyword">partition</span> part_6 <span class="keyword">values</span> <span class="keyword">less</span> <span class="keyword">than</span> (<span class="string">'7000000000'</span>),</span><br><span class="line">	<span class="keyword">partition</span> part_7 <span class="keyword">values</span> <span class="keyword">less</span> <span class="keyword">than</span> (<span class="string">'8000000000'</span>),</span><br><span class="line">	<span class="keyword">partition</span> part_8 <span class="keyword">values</span> <span class="keyword">less</span> <span class="keyword">than</span> (<span class="string">'9000000000'</span>),</span><br><span class="line">	<span class="keyword">partition</span> part_9 <span class="keyword">values</span> <span class="keyword">less</span> <span class="keyword">than</span> (<span class="string">'9999999999'</span>)</span><br><span class="line">);</span><br><span class="line">exec P_student_J314;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> student_J314 <span class="keyword">partition</span>(part_3) <span class="keyword">where</span> sno <span class="keyword">like</span> <span class="string">'3%'</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> student_J314 <span class="keyword">where</span> sno <span class="keyword">like</span> <span class="string">'______01%'</span>;</span><br></pre></td></tr></table></figure>
+    </div>
+</article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = '数据库实验 - oracle'
+    }
+</script>
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            badEgg
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/xhd.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    <aside id="sidebar-hot_posts">
+    <div class="panel panel-gal hot hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-fire"></i>
+            最热文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/">数据库实验四</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%94/">数据库实验五</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%88%E6%94%B9%EF%BC%89/">数据库实验 - oracle</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/12/06/leetcode-%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9A%84%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 最接近的三数之和</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/12/02/%E5%BC%82%E8%89%B2%E5%88%9D%E9%9F%B3/">异色初音</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/12/02/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C2/">leetcode - 三数之和2</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/12/01/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 三数之和</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/30/leetcode%20-%20%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/">leetcode - 最后一个单词的长度</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/28/leetcode-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/">leetcode - 最大子序和</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/22/leetcode%20-%20%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">leetcode - 括号生成</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/01/212-23%E4%BA%8B/">212 23事</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/">leetcode - 字符串转换整数 (atoi)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/16/leetcode%20-%20%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/">leetcode - 搜索插入位置</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/30/leetcode%20-%20%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/">leetcode - 最后一个单词的长度</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/07/leetcode%20-%20%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/">leetcode - 移除元素</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/leetcode-%E5%9B%9E%E6%96%87%E6%95%B0/">leetcode - 回文数</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/28/leetcode-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/">leetcode - 最大子序和</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/25/leetcode-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/">leetcode - 最长公共前缀</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/25/%E8%87%AA%E6%90%ADhexo%E5%8D%9A%E5%AE%A2/">自搭hexo博客</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/">数据库实验二</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%88%E6%94%B9%EF%BC%89/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%88%E6%94%B9%EF%BC%89/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%88%E6%94%B9%EF%BC%89/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 11.200314901644749px;" class="tag-cloud-link">日常</a>
+    
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10.924202778951045px;" class="tag-cloud-link">算法</a>
+    
+    <a href="/tags/leetcode/" style="font-size: 18.843011749975915px;" class="tag-cloud-link">leetcode</a>
+    
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 18.427426279046088px;" class="tag-cloud-link">数据库</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 badEgg Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+<script>
+    window.hot_posts_count = '10'
+    // window.use_leancloud = 'true'
+</script>
+<script src="/js/comment/leancloud.js"></script>
+
+
+<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Mon Dec 09 2019 17:15:11 GMT+0800'
+      window.commentConfig.owner = 'NomalButHappy'
+      window.commentConfig.repo = 'comment'
+      window.commentConfig.client_id = 'e0b4897cc1cca53c6a24'
+      window.commentConfig.client_secret = '0b72418a3830533f9f6e5cbbf9733484978dfc0c'
+      window.commentConfig.redirect_uri = ''
+    } else {
+      window.commentConfig = {
+      	id: 'Mon Dec 09 2019 17:15:11 GMT+0800',
+        owner: 'NomalButHappy',
+        repo: 'comment',
+        client_id: 'e0b4897cc1cca53c6a24',
+        client_secret: '0b72418a3830533f9f6e5cbbf9733484978dfc0c',
+        redirect_uri: ''
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
+
+</html>
