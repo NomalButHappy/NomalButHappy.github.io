@@ -282,7 +282,7 @@
     <div class="content-article">
         <h2 id="oracle-cursor生成学生号"><a href="#oracle-cursor生成学生号" class="headerlink" title="oracle cursor生成学生号"></a>oracle cursor生成学生号</h2><p>由前面做过的实验，学号的规格是这样的ABCD17EFGH共10位，AB表示学院 CD表示专业 17表示年级 EF表示班级 GH表示班里的序号 班级序号是连续的，班内学号是连续的</p>
 <h4 id="创建一个学院专业信息表"><a href="#创建一个学院专业信息表" class="headerlink" title="创建一个学院专业信息表"></a>创建一个学院专业信息表</h4><p>要自动生成学生号，那么先把那些学院 专业 人数 班级数先输入是十分合情又合理的事情= =，所以这些信息我们得先建个表</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> sch_J314(</span><br><span class="line">	college <span class="built_in">varchar</span>(<span class="number">4</span>),</span><br><span class="line">    major <span class="built_in">varchar</span>(<span class="number">4</span>),</span><br><span class="line">    class_num <span class="built_in">int</span>,</span><br><span class="line">    stud_num <span class="built_in">int</span></span><br><span class="line">);</span><br><span class="line">insert into sch_J314 values('09', '02', 7, 200); 28 * 7 196</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> sch_J314 <span class="keyword">values</span>(<span class="string">'02'</span>, <span class="string">'09'</span>, <span class="number">4</span>, <span class="number">100</span>); 25   4 100</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> sch_J314 <span class="keyword">values</span>(<span class="string">'03'</span>, <span class="string">'03'</span>, <span class="number">5</span>, <span class="number">150</span>); 30   5 150</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> sch_J314 <span class="keyword">values</span>(<span class="string">'09'</span>, <span class="string">'05'</span>, <span class="number">4</span>, <span class="number">102</span>); 25   4 100</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> sch_J314 <span class="keyword">values</span>(<span class="string">'03'</span>, <span class="string">'04'</span>, <span class="number">6</span>, <span class="number">170</span>); 28   6 168</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> sch_J314;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> sch_J314(</span><br><span class="line">	college <span class="built_in">varchar</span>(<span class="number">4</span>),</span><br><span class="line">    major <span class="built_in">varchar</span>(<span class="number">4</span>),</span><br><span class="line">    class_num <span class="built_in">int</span>,</span><br><span class="line">    stud_num <span class="built_in">int</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> sch_J314 <span class="keyword">values</span>(<span class="string">'09'</span>, <span class="string">'02'</span>, <span class="number">7</span>, <span class="number">200</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> sch_J314 <span class="keyword">values</span>(<span class="string">'02'</span>, <span class="string">'09'</span>, <span class="number">4</span>, <span class="number">100</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> sch_J314 <span class="keyword">values</span>(<span class="string">'03'</span>, <span class="string">'03'</span>, <span class="number">5</span>, <span class="number">150</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> sch_J314 <span class="keyword">values</span>(<span class="string">'09'</span>, <span class="string">'05'</span>, <span class="number">4</span>, <span class="number">102</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> sch_J314 <span class="keyword">values</span>(<span class="string">'03'</span>, <span class="string">'04'</span>, <span class="number">6</span>, <span class="number">170</span>);</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> sch_J314;</span><br></pre></td></tr></table></figure>
 
 <p>既然要自动生成学号那还要一个保存生成的学号的表（本来可以用stud_J314，但是想想还要改约束，还是新建吧）</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> sno_J314(</span><br><span class="line">    sno <span class="built_in">varchar</span>(<span class="number">20</span>) primary <span class="keyword">key</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
@@ -451,7 +451,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/">leetcode - 报数</a>
+                    <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/">leetcode - 字符串转换整数 (atoi)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/22/leetcode%20-%20%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">leetcode - 括号生成</a>
                 </span>
             </li>
             
@@ -463,37 +469,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/23/leetcode-%E5%9B%9E%E6%96%87%E6%95%B0/">leetcode - 回文数</a>
+                    <a href="/2019/10/27/leetcode-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">leetcode - 两数相加</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/08/leetcode-%E5%AE%9E%E7%8E%B0%20strStr()/">leetcode - 实现 strStr()</a>
+                    <a href="/2019/11/06/leetcode-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E6%AE%B5/">leetcode - 无重复字符的最长子串</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">leetcode - 整数反转</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/10/31/leetcode-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">leetcode - 有效的括号</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/12/leetcode-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/">leetcode - 盛最多水的容器</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/12/02/%E5%BC%82%E8%89%B2%E5%88%9D%E9%9F%B3/">异色初音</a>
+                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
                 </span>
             </li>
             
@@ -505,7 +493,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">数据库实验 - oracle</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/">数据库实验二</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/">数据库实验四</a>
                 </span>
             </li>
             
@@ -538,13 +538,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 12.811658933078334px;" class="tag-cloud-link">日常</a>
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 18.753734974155243px;" class="tag-cloud-link">日常</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 15.730381284167755px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.001842374161663px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 13.936017165468101px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 16.344263092133552px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/leetcode/" style="font-size: 8.256337376379278px;" class="tag-cloud-link">leetcode</a>
+    <a href="/tags/leetcode/" style="font-size: 17.831501438843034px;" class="tag-cloud-link">leetcode</a>
     
 </div>
                 
