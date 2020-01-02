@@ -275,19 +275,19 @@
 <p><a href="https://github.com/MoePlayer/hexo-tag-aplayer" target="_blank" rel="noopener">https://github.com/MoePlayer/hexo-tag-aplayer</a></p>
 <p>下面是一个效果演示</p>
 
-        <div id="aplayer-AmpcPrwx" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-eQQZxtwW" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-AmpcPrwx"),
+            element: document.getElementById("aplayer-eQQZxtwW"),
             narrow: false,
             autoplay: false,
             showlrc: false,
             music: {
-              title: "你好！",
-              author: "MusikM",
-              url: "../hexo插入Aplayer插件/初音ミク,MusikM - 你好.mp3",
+              title: "LET'S GO GET U!",
+              author: "香菜",
+              url: "../hexo插入Aplayer插件/LET'S GO GET U!.mp3",
               pic: "",
               lrc: ""
             }
@@ -311,11 +311,7 @@
 <p>如果是多个，可以用播放器</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayerlist %&#125;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;narrow&quot;: false,                          // （可选）播放器袖珍风格</span><br><span class="line">    &quot;autoplay&quot;: true,                         // （可选) 自动播放，移动端浏览器暂时不支持此功能</span><br><span class="line">    &quot;mode&quot;: &quot;random&quot;,                         // （可选）曲目循环类型，有 &apos;random&apos;（随机播放）, &apos;single&apos; (单曲播放), &apos;circulation&apos; (循环播放), &apos;order&apos; (列表播放)， 默认：&apos;circulation&apos; </span><br><span class="line">    &quot;showlrc&quot;: 3,                             // （可选）歌词显示配置项，可选项有：1,2,3</span><br><span class="line">    &quot;mutex&quot;: true,                            // （可选）该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停</span><br><span class="line">    &quot;theme&quot;: &quot;#e6d0b2&quot;,	                      // （可选）播放器风格色彩设置，默认：#b7daff</span><br><span class="line">    &quot;preload&quot;: &quot;metadata&quot;,                    // （可选）音乐文件预载入模式，可选项： &apos;none&apos; &apos;metadata&apos; &apos;auto&apos;, 默认: &apos;auto&apos;</span><br><span class="line">    &quot;listmaxheight&quot;: &quot;513px&quot;,                 // (可选) 该播放列表的最大长度</span><br><span class="line">    &quot;music&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;title&quot;: &quot;CoCo&quot;,</span><br><span class="line">            &quot;author&quot;: &quot;Jeff Williams&quot;,</span><br><span class="line">            &quot;url&quot;: &quot;caffeine.mp3&quot;,</span><br><span class="line">            &quot;pic&quot;: &quot;caffeine.jpeg&quot;,</span><br><span class="line">            &quot;lrc&quot;: &quot;caffeine.txt&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;title&quot;: &quot;アイロニ&quot;,</span><br><span class="line">            &quot;author&quot;: &quot;鹿乃&quot;,</span><br><span class="line">            &quot;url&quot;: &quot;irony.mp3&quot;,</span><br><span class="line">            &quot;pic&quot;: &quot;irony.jpg&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line">&#123;% endaplayerlist %&#125;</span><br></pre></td></tr></table></figure>
 
-<p>看看播放器的效果</p>
-
-			<script>
-				console.error("SyntaxError: Unexpected token / in JSON at position 48");
-			</script>
+<p>但是播放器我这里调用会有错误，可能是版本问题吧，暂时不太想继续搞。下次想个办法把live2d看板娘给插入到hexo里来<br>（本来就很难加载了，我觉得我是在作死= =）</p>
 
     </div>
 </article>
@@ -480,7 +476,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/">leetcode - 报数</a>
+                    <a href="/2019/12/01/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 三数之和</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/07/leetcode%20-%20%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/">leetcode - 移除元素</a>
                 </span>
             </li>
             
@@ -492,37 +494,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/08/leetcode-%E5%AE%9E%E7%8E%B0%20strStr()/">leetcode - 实现 strStr()</a>
+                    <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">leetcode - 合并两个有序链表</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">leetcode - 整数反转</a>
+                    <a href="/2019/10/23/leetcode-%E5%9B%9E%E6%96%87%E6%95%B0/">leetcode - 回文数</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/06/leetcode-%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9A%84%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 最接近的三数之和</a>
+                    <a href="/2019/11/06/leetcode-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E6%AE%B5/">leetcode - 无重复字符的最长子串</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/12/leetcode-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/">leetcode - 盛最多水的容器</a>
+                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%88%E6%94%B9%EF%BC%89/">数据库实验 - oracle</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/12/02/%E5%BC%82%E8%89%B2%E5%88%9D%E9%9F%B3/">异色初音</a>
+                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%94/">数据库实验五</a>
                 </span>
             </li>
             
@@ -561,13 +557,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 14.903580213785606px;" class="tag-cloud-link">日常</a>
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 12.969535152173503px;" class="tag-cloud-link">日常</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 12.741775955344742px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 18.635316255439086px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 12.085183860911194px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 18.958599879470377px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/leetcode/" style="font-size: 13.229970666363005px;" class="tag-cloud-link">leetcode</a>
+    <a href="/tags/leetcode/" style="font-size: 8.163288884374815px;" class="tag-cloud-link">leetcode</a>
     
 </div>
                 
