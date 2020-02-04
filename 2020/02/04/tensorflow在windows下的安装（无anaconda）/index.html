@@ -11,7 +11,7 @@
     
     
     
-    <title>leetcode - 三数之和2 | badEgg</title>
+    <title>tensorflow在windows下的安装（无anaconda） | badEgg</title>
     <link href="https://nomalbuthappy.github.io" rel="prefetch" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -229,28 +229,19 @@
         <i class="fa fa-home"></i>
         <a href="https://nomalbuthappy.github.io">badEgg</a>
         >
-        <span>leetcode - 三数之和2</span>
+        <span>tensorflow在windows下的安装（无anaconda）</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/12/02/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C2/">leetcode - 三数之和2</a>
+                <a href="/2020/02/04/tensorflow%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%EF%BC%88%E6%97%A0anaconda%EF%BC%89/">tensorflow在windows下的安装（无anaconda）</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>, 
-                
-                <a href="/tags/leetcode/">leetcode</a>
-                
-            </span>
-            
-            <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2019-12-02
+                <i class="fa fa-calendar"></i> 2020-02-04
             </span>
             
             <span class="label label-gal">
@@ -264,20 +255,13 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2019/12/02/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C2/">leetcode - 三数之和2</a>
+                    <a href="/2020/02/04/tensorflow%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%EF%BC%88%E6%97%A0anaconda%EF%BC%89/">tensorflow在windows下的安装（无anaconda）</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2019-12-02
+                <i class="fa fa-calendar"></i> 2020-02-04
             </p>
             <p>
-                
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>, 
-                
-                <a href="/tags/leetcode/">leetcode</a>
-                
                 
                 
                 <i class="fa fa-eye"></i>
@@ -286,26 +270,23 @@
         </center>
     </div>
     <div class="content-article">
-        <h2 id="leetcode-三数之和（补充：昨天搞考试去了）"><a href="#leetcode-三数之和（补充：昨天搞考试去了）" class="headerlink" title="leetcode: 三数之和（补充：昨天搞考试去了）"></a>leetcode: <a href="https://leetcode-cn.com/problems/3sum/" target="_blank" rel="noopener">三数之和</a>（补充：昨天搞考试去了）</h2><p>给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。</p>
-<p>注意：答案中不可以包含重复的三元组。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">例如, 给定数组 nums = [-1, 0, 1, 2, -1, -4]，</span><br><span class="line"></span><br><span class="line">满足要求的三元组集合为：</span><br><span class="line">[</span><br><span class="line">  [-1, 0, 1],</span><br><span class="line">  [-1, -1, 2]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+        <h2 id="tensorflow在windows下的安装（无anaconda）"><a href="#tensorflow在windows下的安装（无anaconda）" class="headerlink" title="tensorflow在windows下的安装（无anaconda）"></a>tensorflow在windows下的安装（无anaconda）</h2><p>其实早就想入tensorflow的坑了，正好上个学期学了机器学习，然后学校因为病毒特么推迟到一周开学（我这个寒假是要比暑假还长咯），我就开个坑，刨个坟。</p>
+<p>首先，我是在无anaconda的情况下安装tensorflow的。网上的tensorflow大部分是在anaconda的环境下安装的，但是我用原生的python用惯了，所以还是打算继续在这个基础上加库</p>
+<p>以前的tensorflow只支持python3.5或python2.7，现在tensorflow2.0以后就可以支持3.6+，所以我安装在我目前常用的python3.7下。</p>
+<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>首先要在<a href="https://www.python.org/" target="_blank" rel="noopener">python官网</a>PyPi下载tensorflow（我的版本是2.1.0），如果是cpu版的（训练偏慢），需要下载tensorflow-cpu，注意了，python是什么版本的就下载-cp版本号，其他软件道理也一样，如，我用python3.7，就是-cp37</p>
+<p>当然，如果能科学上网（我就是亏在用插件科学上网），那么直接用pip下载应该也是可以的（或者是找到镜像网站），不过python官网下载速度很赞了</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>打开cmd到下载目录，加载下载的wheel文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade wheel文件名</span><br></pre></td></tr></table></figure>
 
-<p>n个整数找到所有的a + b + c = 0，二话不说，我们先遍历试试</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">threeSum</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        nums = sorted(nums)</span><br><span class="line">        rnums = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(nums)):</span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> range(j+<span class="number">1</span>, len(nums)):</span><br><span class="line">                    <span class="keyword">if</span> nums[i] + nums[j] + nums[k] == <span class="number">0</span>:</span><br><span class="line">                        flag = <span class="number">1</span></span><br><span class="line">                        <span class="keyword">for</span> a <span class="keyword">in</span> rnums:</span><br><span class="line">                            <span class="keyword">if</span> a == [nums[i], nums[j], nums[k]]:</span><br><span class="line">                                flag = <span class="number">0</span></span><br><span class="line">                                <span class="keyword">break</span></span><br><span class="line">                        <span class="keyword">if</span> flag:</span><br><span class="line">                            rnums.append([nums[i], nums[j], nums[k]])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> rnums;</span><br></pre></td></tr></table></figure>
-
-<p>嗯，不愧是我，直接超时</p>
-<p>好的，我们再想想其他办法= =</p>
-<p>发现一个问题，如果前面的数相加已经超过0，那么第三个数就不用继续判断，就可以省下一部分速度，这也是一种剪枝了</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">threeSum</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        nums = sorted(nums)</span><br><span class="line">        rnums = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">if</span> nums[i] &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(nums)):</span><br><span class="line">                <span class="keyword">if</span> nums[i] + nums[j] &gt; <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">for</span> k <span class="keyword">in</span> range(j+<span class="number">1</span>, len(nums)):</span><br><span class="line">                    <span class="keyword">if</span> nums[i] + nums[j] + nums[k] &gt; <span class="number">0</span>:</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    <span class="keyword">if</span> nums[i] + nums[j] + nums[k] == <span class="number">0</span>:</span><br><span class="line">                        flag = <span class="number">1</span></span><br><span class="line">                        <span class="keyword">for</span> a <span class="keyword">in</span> rnums:</span><br><span class="line">                            <span class="keyword">if</span> a == [nums[i], nums[j], nums[k]]:</span><br><span class="line">                                flag = <span class="number">0</span></span><br><span class="line">                                <span class="keyword">break</span></span><br><span class="line">                        <span class="keyword">if</span> flag:</span><br><span class="line">                            rnums.append([nums[i], nums[j], nums[k]])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> rnums;</span><br></pre></td></tr></table></figure>
-
-<p>发现确实速度上是快一些，从290个测试用例走到了311个测试用例，那么还有什么优化方法呢，发现我之前的查重方法是遍历已找到的三数组，那么现在我试着从循环时判断</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">threeSum</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        rnums = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">if</span> i == <span class="number">0</span> <span class="keyword">or</span> nums[i] &gt; nums[i<span class="number">-1</span>]:</span><br><span class="line">                <span class="keyword">if</span> nums[i] &gt; <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>, len(nums)):</span><br><span class="line">                    <span class="keyword">if</span> j == i+<span class="number">1</span> <span class="keyword">or</span> nums[j] &gt; nums[j<span class="number">-1</span>]:</span><br><span class="line">                        <span class="keyword">if</span> nums[i] + nums[j] &gt; <span class="number">0</span>:</span><br><span class="line">                            <span class="keyword">break</span></span><br><span class="line">                        <span class="keyword">for</span> k <span class="keyword">in</span> range(j+<span class="number">1</span>, len(nums)):</span><br><span class="line">                            <span class="keyword">if</span> k == j+<span class="number">1</span> <span class="keyword">or</span> nums[k] &gt; nums[k<span class="number">-1</span>]:</span><br><span class="line">                                <span class="keyword">if</span> nums[i] + nums[j] + nums[k] &lt; <span class="number">0</span>:</span><br><span class="line">                                    <span class="keyword">continue</span></span><br><span class="line">                                <span class="keyword">elif</span> nums[i] + nums[j] + nums[k] == <span class="number">0</span>:</span><br><span class="line">                                    rnums.append([nums[i], nums[j], nums[k]])</span><br><span class="line">                                    <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> rnums;</span><br></pre></td></tr></table></figure>
-
-<p>好的 ，明显快一些，但是311用例明显是我的一生之敌（要不然把311用例算出来然后if掉算了= =||玩笑），既然是两层遍历那就把后两层遍历用左右的双指针法减少遍历次数吧，发现双指针法。。。真TM好用，连去重都自动做好了</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">threeSum</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        rnums = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">if</span> i == <span class="number">0</span> <span class="keyword">or</span> nums[i] &gt; nums[i<span class="number">-1</span>]:</span><br><span class="line">                l = i + <span class="number">1</span></span><br><span class="line">                r = len(nums) - <span class="number">1</span></span><br><span class="line">                <span class="keyword">while</span> l &lt; r:</span><br><span class="line">                    s = nums[i] + nums[l] + nums[r]</span><br><span class="line">                    <span class="keyword">if</span> s == <span class="number">0</span>:</span><br><span class="line">                        rnums.append([nums[i], nums[l], nums[r]])</span><br><span class="line">                        l += <span class="number">1</span></span><br><span class="line">                        r -= <span class="number">1</span></span><br><span class="line">                        <span class="keyword">while</span> l &lt; r <span class="keyword">and</span> nums[l] == nums[l<span class="number">-1</span>]:</span><br><span class="line">                            l += <span class="number">1</span></span><br><span class="line">                        <span class="keyword">while</span> r &gt; l <span class="keyword">and</span> nums[r] == nums[r+<span class="number">1</span>]:</span><br><span class="line">                            r -= <span class="number">1</span></span><br><span class="line">                    <span class="keyword">elif</span> s &gt; <span class="number">0</span>:</span><br><span class="line">                        r -= <span class="number">1</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        l += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> rnums;</span><br></pre></td></tr></table></figure>
-
-<p>双指针大法好！</p>
-<p>无论遇到什么困难，都不要害怕，奥利给！🍺</p>
+<p>如果是cpu的那么就到此为止了，但是GPU还不行，以下是安装英伟达GPU加速的库</p>
+<h4 id="CUDA-Toolkit安装"><a href="#CUDA-Toolkit安装" class="headerlink" title="CUDA Toolkit安装"></a>CUDA Toolkit安装</h4><p>首先得有个GPU，然后就是GPU得支持CUDA</p>
+<p>cuda Toolkit要到<a href="https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exenetwork" target="_blank" rel="noopener">Nvidia的官网</a>去下，注意了，可以选择先运行一下tensorflow，它会找不到一个cudaXXX.dll，像我是101.dll，那么CUDA就要下载10.1的版本，能下载到完全对应版本是最好，但是如果没有下到，那就下载最近的版本，正常安装就可以了</p>
+<h4 id="cuDnn库下载"><a href="#cuDnn库下载" class="headerlink" title="cuDnn库下载"></a>cuDnn库下载</h4><p>同样是<a href="https://developer.nvidia.com/cudnn" target="_blank" rel="noopener">Nvidia提供的接口库</a>，用于tensorflow等需要GPU渲染或是加速的软件或工具使用。简单填写一些问题就可以下载了</p>
+<h4 id="cuDnn库加载"><a href="#cuDnn库加载" class="headerlink" title="cuDnn库加载"></a>cuDnn库加载</h4><p>在CUDA Toolkit安装完成后，就是之前的cuDnn库的加载了。直接把文件拷贝到CUDA Toolkit对应的文件夹下就可以了</p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>在一切完成后，发现环境变量有点问题，在CUDA_PATH中加入/bin和/lib/x64，最好重启一下，让环境变量能加载出来</p>
+<p>如果之前下载的CUDA Toolkit和tensorflow的不一样，就会报出could not load dynamic library ‘cudart64_XXX’，在CUDA安装路径找到cudart64_XXY，改为未找到的XXX基本就可以了，也可以去网上找到对应的XXX文件放进去，现在就可以看到加载成功了</p>
+<p>好的，咸鱼安装方法就记录到这里，下一期就做个python下tf的nmist小项目康康= =</p>
+<p>咸鱼的假哦，怎么这么长啊 :-(</p>
 
     </div>
 </article>
@@ -316,7 +297,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = 'leetcode - 三数之和2'
+      window.commentConfig.title = 'tensorflow在windows下的安装（无anaconda）'
     }
 </script>
 
@@ -464,25 +445,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/01/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 三数之和</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/12/02/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C2/">leetcode - 三数之和2</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/">leetcode - 字符串转换整数 (atoi)</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/">leetcode - 报数</a>
+                    <a href="/2020/01/05/RSS&RSSHub%E5%AD%A6%E4%B9%A0-%E6%93%8D%E4%BD%9C-%E6%84%9F%E6%82%9F/">RSS&amp;RSSHub学习-操作-感悟</a>
                 </span>
             </li>
             
@@ -500,25 +463,43 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/06/leetcode-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E6%AE%B5/">leetcode - 无重复字符的最长子串</a>
+                    <a href="/2020/01/06/leetcode-Pow(x,n)/">leetcode - Pow(x, n)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/28/leetcode-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/">leetcode - 最大子序和</a>
+                    <a href="/2019/11/05/leetcode-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/">leetcode - 删除排序数组中的重复项</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%94/">数据库实验五</a>
+                    <a href="/2019/11/08/leetcode-%E5%AE%9E%E7%8E%B0%20strStr()/">leetcode - 实现 strStr()</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/">数据库实验二</a>
+                    <a href="/2019/12/06/leetcode-%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9A%84%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 最接近的三数之和</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/31/leetcode-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">leetcode - 有效的括号</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/">数据库实验四</a>
                 </span>
             </li>
             
@@ -533,17 +514,17 @@
 
                 
                 <li>
-                    <a href="/2019/12/02/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C2/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/02/04/tensorflow%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%EF%BC%88%E6%97%A0anaconda%EF%BC%89/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/12/02/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C2/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/02/04/tensorflow%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%EF%BC%88%E6%97%A0anaconda%EF%BC%89/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/12/02/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C2/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/02/04/tensorflow%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%EF%BC%88%E6%97%A0anaconda%EF%BC%89/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -551,13 +532,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10.29598563351125px;" class="tag-cloud-link">日常</a>
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10.194031278022722px;" class="tag-cloud-link">日常</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 12.163766499211214px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.071971219079327px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 12.967184684524362px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 8.222817259380331px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/leetcode/" style="font-size: 16.65153659298739px;" class="tag-cloud-link">leetcode</a>
+    <a href="/tags/leetcode/" style="font-size: 10.046647273660826px;" class="tag-cloud-link">leetcode</a>
     
 </div>
                 
@@ -677,7 +658,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Mon Dec 02 2019 10:52:49 GMT+0800'
+      window.commentConfig.id = 'Tue Feb 04 2020 14:28:39 GMT+0800'
       window.commentConfig.owner = 'NomalButHappy'
       window.commentConfig.repo = 'comment'
       window.commentConfig.client_id = 'e0b4897cc1cca53c6a24'
@@ -685,7 +666,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Mon Dec 02 2019 10:52:49 GMT+0800',
+      	id: 'Tue Feb 04 2020 14:28:39 GMT+0800',
         owner: 'NomalButHappy',
         repo: 'comment',
         client_id: 'e0b4897cc1cca53c6a24',
