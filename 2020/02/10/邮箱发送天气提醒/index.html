@@ -11,7 +11,7 @@
     
     
     
-    <title>leetcode - 搜索插入位置 | badEgg</title>
+    <title>邮箱发送天气提醒 | badEgg</title>
     <link href="https://nomalbuthappy.github.io" rel="prefetch" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -229,28 +229,19 @@
         <i class="fa fa-home"></i>
         <a href="https://nomalbuthappy.github.io">badEgg</a>
         >
-        <span>leetcode - 搜索插入位置</span>
+        <span>邮箱发送天气提醒</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/11/16/leetcode%20-%20%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/">leetcode - 搜索插入位置</a>
+                <a href="/2020/02/10/%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E5%A4%A9%E6%B0%94%E6%8F%90%E9%86%92/">邮箱发送天气提醒</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>, 
-                
-                <a href="/tags/leetcode/">leetcode</a>
-                
-            </span>
-            
-            <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2019-11-16
+                <i class="fa fa-calendar"></i> 2020-02-10
             </span>
             
             <span class="label label-gal">
@@ -264,20 +255,13 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2019/11/16/leetcode%20-%20%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/">leetcode - 搜索插入位置</a>
+                    <a href="/2020/02/10/%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E5%A4%A9%E6%B0%94%E6%8F%90%E9%86%92/">邮箱发送天气提醒</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2019-11-16
+                <i class="fa fa-calendar"></i> 2020-02-10
             </p>
             <p>
-                
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>, 
-                
-                <a href="/tags/leetcode/">leetcode</a>
-                
                 
                 
                 <i class="fa fa-eye"></i>
@@ -286,17 +270,43 @@
         </center>
     </div>
     <div class="content-article">
-        <h2 id="leetcode-搜索插入位置"><a href="#leetcode-搜索插入位置" class="headerlink" title="leetcode: 搜索插入位置"></a>leetcode: <a href="https://leetcode-cn.com/problems/search-insert-position/" target="_blank" rel="noopener">搜索插入位置</a></h2><p>给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。</p>
-<p>你可以假设数组中无重复元素。</p>
+        <h2 id="邮箱发送天气提醒"><a href="#邮箱发送天气提醒" class="headerlink" title="邮箱发送天气提醒"></a>邮箱发送天气提醒</h2><p>这个在网上还算是比较多的，主要功能就是调用和风天气api或者爬取天气，定时发送邮件到指定的邮箱，起到一个报告的作用</p>
+<p>但是，这个也被诟病没有用—-打开手机就能看到天气还需要这样的邮件嘛。但是从另一个角度来说也不是完全没用，比如先设置好，定时发送服务器中的报告来提防服务器出事或者说找个语料包，定时给女朋友发个问候之类的，最次，也是一个学习的过程啊（笑哭）</p>
+<p>我就大概描述一下发送天气提醒的过程及关键代码</p>
+<h4 id="配置天气的api接口"><a href="#配置天气的api接口" class="headerlink" title="配置天气的api接口"></a>配置天气的api接口</h4><p>这里常用的免费api就是和风天气了，虽然免费有一些限制使用，但是比专门爬取是要好上很多了。</p>
+<h5 id="注：由于图片麻烦，我会尽量使我的描述清楚不用配图，除了要做开箱-，那就没办法了"><a href="#注：由于图片麻烦，我会尽量使我的描述清楚不用配图，除了要做开箱-，那就没办法了" class="headerlink" title="*注：由于图片麻烦，我会尽量使我的描述清楚不用配图，除了要做开箱:-)，那就没办法了"></a>*注：由于图片麻烦，我会尽量使我的描述清楚不用配图，除了要做开箱:-)，那就没办法了</h5><ol>
+<li><p>首先登陆<a href="https://www.heweather.com/" target="_blank" rel="noopener">和风天气</a>，按照提示注册，这个不需要多说</p>
+</li>
+<li><p>回到首页，找到天气api（右上角），进入登陆进入控制台</p>
+</li>
+<li><p>在左边的控制台找到应用管理，新建一个应用，即新建一个自己的接口</p>
+</li>
+<li><p>新建完成后找到新建的应用，点击编辑，输入Key的名称与类型，类型用web api就好</p>
+</li>
+</ol>
+<p>到这里算是把接口配置好了</p>
+<h4 id="调用已配置的接口"><a href="#调用已配置的接口" class="headerlink" title="调用已配置的接口"></a>调用已配置的接口</h4><p>对于网站的接口就web请求获取json值就好，和风天气有提供<a href="https://dev.heweather.com/docs/getting-started/" target="_blank" rel="noopener">文档说明</a>，这里可以自己选择配置。</p>
+<p>完事具备，现在只差调用了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://free-api.heweather.net/s6/weather/forecast?location=衡阳&amp;key=45a7ae9c8ebd4660a0e1a9c93e2f5b2a'</span></span><br><span class="line">res = requests.get(url)</span><br><span class="line">res = json.loads(res.text)</span><br><span class="line">a = res[<span class="string">'HeWeather6'</span>][<span class="number">0</span>][<span class="string">'basic'</span>]</span><br><span class="line"><span class="comment">#print(result)</span></span><br><span class="line">result = res[<span class="string">'HeWeather6'</span>][<span class="number">0</span>][<span class="string">'daily_forecast'</span>]</span><br><span class="line"><span class="comment">#print(result)</span></span><br><span class="line">city = a[<span class="string">'admin_area'</span>]+a[<span class="string">'location'</span>]</span><br><span class="line">print(city)</span><br><span class="line"></span><br><span class="line">names = [<span class="string">'城市'</span>,<span class="string">'时间'</span>,<span class="string">'天气状况'</span>,<span class="string">'最高温'</span>,<span class="string">'最低温'</span>,<span class="string">'日出'</span>,<span class="string">'日落'</span>]</span><br><span class="line"><span class="keyword">for</span> data <span class="keyword">in</span> result:</span><br><span class="line">    date = data[<span class="string">'date'</span>]</span><br><span class="line">    cond = data[<span class="string">'cond_txt_d'</span>]</span><br><span class="line">    max = data[<span class="string">'tmp_max'</span>]</span><br><span class="line">    min = data[<span class="string">'tmp_min'</span>]</span><br><span class="line">    sr = data[<span class="string">'sr'</span>]</span><br><span class="line">    ss = data[<span class="string">'ss'</span>]</span><br><span class="line">    print(city,date,cond,max,min,sr,ss)</span><br></pre></td></tr></table></figure>
+
+<p>我这里调用的衡阳的天气，得到的print为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">湖南衡阳</span><br><span class="line">湖南衡阳 2020-02-09 阴 10 6 07:09 18:17</span><br><span class="line">湖南衡阳 2020-02-10 小雨 11 8 07:09 18:18</span><br><span class="line">湖南衡阳 2020-02-11 阵雨 17 9 07:08 18:19</span><br></pre></td></tr></table></figure>
+
+<p>显然，调用成功了（假装没有调试过）</p>
+<h4 id="用邮件发送天气到目标邮箱"><a href="#用邮件发送天气到目标邮箱" class="headerlink" title="用邮件发送天气到目标邮箱"></a>用邮件发送天气到目标邮箱</h4><p>自动发邮件的话一般来说需要一个域名服务器，不过这个可以用开启qq邮箱的stmp服务来实现。</p>
+<p>登陆qq邮箱，在设置中找到账户，找到POP3/SMTP服务，根据提示打开服务并记录下授权码（或者说是密码），这就是申请自动发邮件的关键。</p>
+<p>下面就是代码环节</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</span><br><span class="line"><span class="keyword">from</span> email.mime.multipart <span class="keyword">import</span> MIMEMultipart</span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://free-api.heweather.net/s6/weather/forecast?location=衡阳&amp;key=45a7ae9c8ebd4660a0e1a9c93e2f5b2a'</span></span><br><span class="line">today_time = time.strftime(<span class="string">'%Y-%m-%d'</span>, time.localtime(time.time()))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_weather_data</span><span class="params">()</span>:</span></span><br><span class="line">    res = requests.get(url)</span><br><span class="line">    res.encoding = <span class="string">'utf-8'</span></span><br><span class="line">    res = json.loads(res.text)</span><br><span class="line">    result = res[<span class="string">'HeWeather6'</span>][<span class="number">0</span>][<span class="string">'daily_forecast'</span>]</span><br><span class="line">    location = res[<span class="string">'HeWeather6'</span>][<span class="number">0</span>][<span class="string">'basic'</span>]</span><br><span class="line">    city = location[<span class="string">'parent_city'</span>] + location[<span class="string">'location'</span>]</span><br><span class="line">    names = [<span class="string">'城市'</span>, <span class="string">'时间'</span>, <span class="string">'天气状况'</span>, <span class="string">'最高温'</span>, <span class="string">'最低温'</span>, <span class="string">'日出'</span>, <span class="string">'日落'</span>]</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'today_weather.csv'</span>, <span class="string">'w'</span>, newline=<span class="string">''</span>)<span class="keyword">as</span> f:</span><br><span class="line">        writer = csv.writer(f)</span><br><span class="line">        writer.writerow(names)</span><br><span class="line">        <span class="keyword">for</span> data <span class="keyword">in</span> result:</span><br><span class="line">            date = data[<span class="string">'date'</span>]</span><br><span class="line">            cond = data[<span class="string">'cond_txt_d'</span>]</span><br><span class="line">            max = data[<span class="string">'tmp_max'</span>]</span><br><span class="line">            min = data[<span class="string">'tmp_min'</span>]</span><br><span class="line">            sr = data[<span class="string">'sr'</span>]</span><br><span class="line">            ss = data[<span class="string">'ss'</span>]</span><br><span class="line">            writer.writerows([(city, date, cond, max, min, sr, ss)])</span><br><span class="line">    send_email()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_email</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 设置邮箱的域名</span></span><br><span class="line">    HOST = <span class="string">'smtp.qq.com'</span></span><br><span class="line">    <span class="comment"># 设置邮件标题</span></span><br><span class="line">    SUBJECT = <span class="string">'%s日份天气预报信息，请查收'</span>%today_time</span><br><span class="line">    <span class="comment"># 设置发件人邮箱</span></span><br><span class="line">    FROM = <span class="string">'271370166@qq.com'</span></span><br><span class="line">    <span class="comment"># 设置收件人邮箱</span></span><br><span class="line">    TO = <span class="string">'271370166@qq.com'</span>		<span class="comment"># 可以同时发送到多个邮箱</span></span><br><span class="line">    message = MIMEMultipart(<span class="string">'related'</span>)</span><br><span class="line">    <span class="comment"># --------------------------------------发送文本-----------------</span></span><br><span class="line">	<span class="comment"># 发送邮件正文到对方的邮箱中</span></span><br><span class="line">    message_html = MIMEText(<span class="string">"%s日份天气预报到账啦，请查收"</span> % today_time, <span class="string">'plain'</span>, <span class="string">'utf-8'</span>)</span><br><span class="line">    message.attach(message_html)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># -------------------------------------添加文件---------------------</span></span><br><span class="line">    <span class="comment"># today_weather.csv这个文件</span></span><br><span class="line">    message_xlsx = MIMEText(open(<span class="string">'today_weather.csv'</span>, <span class="string">'rb'</span>).read(), <span class="string">'base64'</span>, <span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="comment"># 设置文件在附件当中的名字</span></span><br><span class="line">    message_xlsx[<span class="string">'Content-Disposition'</span>] = <span class="string">'attachment;filename="today_weather.csv"'</span></span><br><span class="line">    message.attach(message_xlsx)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 设置邮件发件人</span></span><br><span class="line">    message[<span class="string">'From'</span>] = FROM</span><br><span class="line">    <span class="comment"># 设置邮件收件人</span></span><br><span class="line">    message[<span class="string">'To'</span>] = TO</span><br><span class="line">    <span class="comment"># 设置邮件标题</span></span><br><span class="line">    message[<span class="string">'Subject'</span>] = SUBJECT</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 获取简单邮件传输协议的证书</span></span><br><span class="line">    email_client = smtplib.SMTP_SSL(HOST)</span><br><span class="line">    <span class="comment"># 设置发件人邮箱的域名和端口，端口为465</span></span><br><span class="line">    email_client.connect(HOST, <span class="string">'465'</span>)</span><br><span class="line">    <span class="comment"># ---------------------------邮箱授权码------------------------------</span></span><br><span class="line">    result = email_client.login(FROM, <span class="string">'ellnzvqenuclcaab'</span>)</span><br><span class="line">    print(<span class="string">'登录结果'</span>, result)</span><br><span class="line">    email_client.sendmail(from_addr=FROM, to_addrs=TO.split(<span class="string">','</span>), msg=message.as_string())</span><br><span class="line">    <span class="comment"># 关闭邮件发送客户端</span></span><br><span class="line">    email_client.close()</span><br><span class="line"></span><br><span class="line">get_weather_data()</span><br></pre></td></tr></table></figure>
+
+<p>运行以后发现，邮件就已经以csv的格式发送到邮箱里了。注意，这里我用的是python3.7，不同版本使用会有细微差别，所以需要一点调整，无伤大雅。</p>
+<p>现在是发送一个天气的CSV附件，但是这还不是我所想要的内容，我希望把这个内容提取到邮件内容里，比如</p>
+<p>主子/小主：</p>
+<p>​    今天XXX的天气是XXX，温度在XX和XX之间，与昨天相比更冷/热了，注意保暖:-)。今天有什么代办事项（课程），服务器有什么记录balabala</p>
+<p>那这是下一步的事，今天因为多吃了一粒米心情不好就不继续写了，明天再继续写。</p>
 <hr>
-<p>好的，简单题终结者石锤了= =||</p>
-<p>这题就是一遍遍历过去就完事了</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">searchInsert</span><span class="params">(self, nums, target)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">if</span> nums[i] == target:</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">            <span class="keyword">elif</span> nums[i] &gt; target:</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> len(nums)</span><br></pre></td></tr></table></figure>
-
-<p>我不想咸鱼啊，可是大脑他不允许啊艹！明天又大一岁了，还是努点力吧 : - (</p>
-<p>【在，为什么咸鱼！】</p>
-<p>【因为懒啊！】</p>
-
+<p>我是分割线</p>
+<hr>
+<h4 id="把内容提取到邮件之中"><a href="#把内容提取到邮件之中" class="headerlink" title="把内容提取到邮件之中"></a>把内容提取到邮件之中</h4>
     </div>
 </article>
 
@@ -306,7 +316,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = 'leetcode - 搜索插入位置'
+      window.commentConfig.title = '邮箱发送天气提醒'
     }
 </script>
 
@@ -454,31 +464,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/01/01/hexo%E6%8F%92%E5%85%A5Aplayer%E6%8F%92%E4%BB%B6/">hexo插入Aplayer插件</a>
+                    <a href="/2019/11/05/leetcode-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/">leetcode - 删除排序数组中的重复项</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/">leetcode - 字符串转换整数 (atoi)</a>
+                    <a href="/2019/11/08/leetcode-%E5%AE%9E%E7%8E%B0%20strStr()/">leetcode - 实现 strStr()</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/02/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C2/">leetcode - 三数之和2</a>
+                    <a href="/2019/11/06/leetcode-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E6%AE%B5/">leetcode - 无重复字符的最长子串</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/">leetcode - 报数</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/16/leetcode%20-%20%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/">leetcode - 搜索插入位置</a>
+                    <a href="/2019/12/06/leetcode-%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9A%84%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 最接近的三数之和</a>
                 </span>
             </li>
             
@@ -490,25 +494,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/10/24/leetcode-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/">leetcode - 罗马数字转整数</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2020/02/04/tensorflow%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%EF%BC%88%E6%97%A0anaconda%EF%BC%89/">tensorflow在windows下的安装（无anaconda）</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/02/%E5%BC%82%E8%89%B2%E5%88%9D%E9%9F%B3/">异色初音</a>
+                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%94/">数据库实验五</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/">数据库实验二</a>
+                    <a href="/2019/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">数据库实验 - oracle</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/">数据库实验四</a>
+                    <a href="/2019/10/25/%E8%87%AA%E6%90%ADhexo%E5%8D%9A%E5%AE%A2/">自搭hexo博客</a>
                 </span>
             </li>
             
@@ -523,17 +533,17 @@
 
                 
                 <li>
-                    <a href="/2019/11/16/leetcode%20-%20%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/02/10/%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E5%A4%A9%E6%B0%94%E6%8F%90%E9%86%92/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/11/16/leetcode%20-%20%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/02/10/%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E5%A4%A9%E6%B0%94%E6%8F%90%E9%86%92/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/11/16/leetcode%20-%20%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/02/10/%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E5%A4%A9%E6%B0%94%E6%8F%90%E9%86%92/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -541,13 +551,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 11.79335265127498px;" class="tag-cloud-link">日常</a>
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 14.853073404339064px;" class="tag-cloud-link">日常</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 18.199566552734836px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.032144945108442px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 8.985807189464298px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 8.261133905795853px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/leetcode/" style="font-size: 17.33322571097596px;" class="tag-cloud-link">leetcode</a>
+    <a href="/tags/leetcode/" style="font-size: 19.92141737657018px;" class="tag-cloud-link">leetcode</a>
     
 </div>
                 
@@ -667,7 +677,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Sat Nov 16 2019 14:33:12 GMT+0800'
+      window.commentConfig.id = 'Mon Feb 10 2020 16:08:36 GMT+0800'
       window.commentConfig.owner = 'NomalButHappy'
       window.commentConfig.repo = 'comment'
       window.commentConfig.client_id = 'e0b4897cc1cca53c6a24'
@@ -675,7 +685,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Sat Nov 16 2019 14:33:12 GMT+0800',
+      	id: 'Mon Feb 10 2020 16:08:36 GMT+0800',
         owner: 'NomalButHappy',
         repo: 'comment',
         client_id: 'e0b4897cc1cca53c6a24',
