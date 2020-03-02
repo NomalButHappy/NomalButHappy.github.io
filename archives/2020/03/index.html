@@ -11,7 +11,7 @@
     
     
     
-    <title>RSS&amp;RSSHub学习-操作-感悟 | badEgg</title>
+    <title>archive_a | badEgg</title>
     <link href="https://nomalbuthappy.github.io" rel="prefetch" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -124,7 +124,7 @@
                 
                 
                 
-                <li class="">
+                <li class="current">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -223,31 +223,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    
-<article class="article well article-body" id="article">
+                    <article class="article well article-body" id="article-archive">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="https://nomalbuthappy.github.io">badEgg</a>
         >
-        <span>RSS&amp;RSSHub学习-操作-感悟</span>
+        <span>归档</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2020/01/05/RSS&RSSHub%E5%AD%A6%E4%B9%A0-%E6%93%8D%E4%BD%9C-%E6%84%9F%E6%82%9F/">RSS&amp;RSSHub学习-操作-感悟</a>
+                <a href="/archives">归档</a>
             </h1>
-        </div>
-        <div class="tag-article">
-            
-            <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2020-01-05
-            </span>
-            
-            <span class="label label-gal">
-                <i class="fa fa-eye"></i>
-            </span>
-            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -255,50 +243,180 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2020/01/05/RSS&RSSHub%E5%AD%A6%E4%B9%A0-%E6%93%8D%E4%BD%9C-%E6%84%9F%E6%82%9F/">RSS&amp;RSSHub学习-操作-感悟</a>
+                    <a href="/archives">归档</a>
                 </h4>
             </div>
-            <p>
-                <i class="fa fa-calendar"></i> 2020-01-05
-            </p>
-            <p>
-                
-                
-                <i class="fa fa-eye"></i>
-                
-            </p>
         </center>
     </div>
-    <div class="content-article">
-        <h2 id="RSS-amp-RSSHub学习-操作-感悟"><a href="#RSS-amp-RSSHub学习-操作-感悟" class="headerlink" title="RSS&amp;RSSHub学习-操作-感悟"></a>RSS&amp;RSSHub学习-操作-感悟</h2><h4 id="先说说RSS吧"><a href="#先说说RSS吧" class="headerlink" title="先说说RSS吧"></a>先说说RSS吧</h4><p>RSS我是从<a href="https://diygod.me/ohmyrss/" target="_blank" rel="noopener">diygod大佬博客</a>里看到的</p>
-<p>看概念一开始完全懵逼，但是下了一个RSS阅读器后就大概知道是个什么东西了，老实说，这个十分实用，对于我这种长期坐在电脑前的死宅来说尤其如此。它省了我很多去各个网站浏览的时间–因为它把所有网站集成了。</p>
-<p>这个怎么实现呢，首先是通过RSS阅读器解析一个网站的RSS，通过RSS获取这个网站的信息。而如何获取信息的方式，就全部写在RSS里，但是每个网站内容，格式，形式不一样，所以RSS也不一样，就是说，每个RSS都要单独编写。</p>
-<p>所以在RSS出来后就火了一阵子，但是问题来了。首先不一定有人做这个网站的RSS，做了也可能找不到，找到了也可能因为页面更新换代用不了，另外RSS 不利于网站方的广告投放、隐私搜集、用户存留等商业行为。这就是RSS难以兴起的原因= =。</p>
-<h4 id="RSSHUB是什么"><a href="#RSSHUB是什么" class="headerlink" title="RSSHUB是什么"></a>RSSHUB是什么</h4><p>RSSHub是diygod发起的一个开源项目，目的是简化和标准RSS的制作流程，让更多的人可以参与到RSS的制作里面来。当然现在不止这么一个项目可以做出RSS地址，但是目前来看应该是相对比较完善的。</p>
-<h4 id="通过RSSHub做一个RSS"><a href="#通过RSSHub做一个RSS" class="headerlink" title="通过RSSHub做一个RSS"></a>通过RSSHub做一个RSS</h4><p>一开始是打算加入项目做一个contributor的，发动要素察觉，发现是nodejs（没学过），发现310个参与者，发现项目大小，好的，你的<del>痛苦</del>实力在我之上，我就做个RSS自娱自乐学学nodejs算了（流下了没能力的泪水）</p>
-<p>首先我之前说过RSS实质上是写了一个爬虫，爬取了网页数据，所以我这次要写的就是nodejs爬虫。这次爬的就是中南大学官网的中南要闻。</p>
-<p>由于nodejs集成了一些其他东西，所以我先写一个纯nodejs版本的爬虫</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>); </span><br><span class="line"><span class="keyword">const</span> cheerio = <span class="built_in">require</span>(<span class="string">"cheerio"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> baseurl = <span class="string">'http://news.csu.edu.cn/info/1002/143733.htm'</span>; <span class="comment">//官网上的内嵌页面</span></span><br><span class="line">http.get(baseurl, <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> html = <span class="string">''</span>;</span><br><span class="line">	res.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">		html += data;                              <span class="comment">//爬取整个页面</span></span><br><span class="line">	&#125;);</span><br><span class="line">	res.on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> $ = cheerio.load(html);</span><br><span class="line">		$(<span class="string">'.otherTme'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">i, e</span>)</span>&#123;           <span class="comment">//选择器选到标题</span></span><br><span class="line">			<span class="built_in">console</span>.log($(e).text());</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;).on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'获取数据出错！'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>这个就简单爬取了一下标题（实际上我打算就爬个标题，爬个链接href就好了）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> got = <span class="built_in">require</span>(<span class="string">'@/utils/got'</span>);</span><br><span class="line"><span class="keyword">const</span> cheerio = <span class="built_in">require</span>(<span class="string">'cheerio'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="keyword">async</span> (ctx) =&gt; &#123;</span><br><span class="line">	<span class="keyword">const</span> baseurl = <span class="string">'http://www.csu.edu.cn/'</span>;</span><br><span class="line">	<span class="keyword">const</span> url = <span class="string">'http://www.csu.edu.cn/yw.htm'</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">const</span> response = <span class="keyword">await</span> got(&#123;</span><br><span class="line">        method: <span class="string">'get'</span>,</span><br><span class="line">        url: url,</span><br><span class="line">    &#125;);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">const</span> $ = cheerio.load(response.data);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">const</span> list = $(<span class="string">'a'</span>);</span><br><span class="line">	<span class="keyword">const</span> count = [];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; <span class="built_in">Math</span>.min(list.length, <span class="number">6</span>); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		count.push(i)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">const</span> out = <span class="keyword">await</span> <span class="built_in">Promise</span>.all(</span><br><span class="line">		count.map(<span class="keyword">async</span> (i) =&gt; &#123;</span><br><span class="line">			<span class="keyword">const</span> each = $(list[i]);</span><br><span class="line">			<span class="keyword">const</span> storyLink = each.attr(<span class="string">'href'</span>);</span><br><span class="line">			<span class="keyword">const</span> item = &#123;</span><br><span class="line">				title: each.attr(<span class="string">'title'</span>),</span><br><span class="line">				link: storyLink,</span><br><span class="line">			&#125;;</span><br><span class="line">			<span class="keyword">const</span> key = item.link;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">const</span> responseAuthor = <span class="keyword">await</span> got(&#123;</span><br><span class="line">				method: <span class="string">'get'</span>,</span><br><span class="line">				url: key,</span><br><span class="line">			&#125;);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">/*</span></span><br><span class="line"><span class="comment">			const $ = cheerio.load(responseAuthor.data);</span></span><br><span class="line"><span class="comment">			$1('.otherTme').each(function(i, e)&#123;</span></span><br><span class="line"><span class="comment">				item.discription = `作者：$1&#123;$1(e).first().text()&#125;&lt;br&gt;描述：测试`;</span></span><br><span class="line"><span class="comment">			&#125;);</span></span><br><span class="line"><span class="comment">			*/</span></span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(item);</span><br><span class="line">		&#125;)</span><br><span class="line">	);</span><br><span class="line">	</span><br><span class="line">	ctx.state.data = &#123;</span><br><span class="line">		title: <span class="string">'中南要闻'</span>,</span><br><span class="line">		link: <span class="string">'http://www.csu.edu.cn/yw.htm'</span>,</span><br><span class="line">		item: out,</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>大概就是这样吧，本地部署效果是ok的，就是没有上传到github上去部署，实在是太菜了= =。</p>
-<p>再开一个坑，爬取校内通知，但是这个的cookie在请求头中，让人头大，目前还没能做出来，那天想起来再填坑吧</p>
-
+    <div class="content-article" style="margin-top: 30px;">
+        
+        
+            <h1 style="font-size: 24px; margin-top: 40px;">2020年</h1>
+            
+        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+            
+             
+             
+                        <a href="/2020/03/02/%E4%B8%8D%E5%90%8C%E5%B9%B4%E4%BB%A3%E7%9A%84%E7%BB%8F%E5%85%B8%E6%B8%B8%E6%88%8F/">不同年代的经典游戏</a>
+                        <br>
+            
+             
+                        <a href="/2020/02/10/%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E5%A4%A9%E6%B0%94%E6%8F%90%E9%86%92/">邮箱发送天气提醒</a>
+                        <br>
+            
+             
+                        <a href="/2020/02/05/tensorflow%20nmist%E5%BA%93%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/">tensorflow nmist库手写数字识别</a>
+                        <br>
+            
+             
+                        <a href="/2020/02/04/tensorflow%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%EF%BC%88%E6%97%A0anaconda%EF%BC%89/">tensorflow在windows下的安装（无anaconda）</a>
+                        <br>
+            
+             
+                        <a href="/2020/01/06/leetcode-Pow(x,n)/">leetcode - Pow(x, n)</a>
+                        <br>
+            
+             
+                        <a href="/2020/01/05/RSS&RSSHub%E5%AD%A6%E4%B9%A0-%E6%93%8D%E4%BD%9C-%E6%84%9F%E6%82%9F/">RSS&amp;RSSHub学习-操作-感悟</a>
+                        <br>
+            
+             
+                        <a href="/2020/01/01/hexo%E6%8F%92%E5%85%A5Aplayer%E6%8F%92%E4%BB%B6/">hexo插入Aplayer插件</a>
+                        <br>
+            
+             
+                        </div>
+                    <h1 style="font-size: 24px; margin-top: 40px;">2019年</h1>
+                    <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+                 
+             
+                        <a href="/2019/12/21/cursor%E7%94%9F%E6%88%90%E5%AD%A6%E7%94%9F%E5%8F%B7/">oracle cursor生成学生号</a>
+                        <br>
+            
+             
+                        <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/">数据库实验四</a>
+                        <br>
+            
+             
+                        <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%94/">数据库实验五</a>
+                        <br>
+            
+             
+                        <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%88%E6%94%B9%EF%BC%89/">数据库实验 - oracle</a>
+                        <br>
+            
+             
+                        <a href="/2019/12/06/leetcode-%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9A%84%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 最接近的三数之和</a>
+                        <br>
+            
+             
+                        <a href="/2019/12/02/%E5%BC%82%E8%89%B2%E5%88%9D%E9%9F%B3/">异色初音</a>
+                        <br>
+            
+             
+                        <a href="/2019/12/02/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C2/">leetcode - 三数之和2</a>
+                        <br>
+            
+             
+                        <a href="/2019/12/01/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 三数之和</a>
+                        <br>
+            
+             
+                        <a href="/2019/11/30/leetcode%20-%20%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/">leetcode - 最后一个单词的长度</a>
+                        <br>
+            
+             
+                        <a href="/2019/11/28/leetcode-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/">leetcode - 最大子序和</a>
+                        <br>
+            
+             
+                        <a href="/2019/11/22/leetcode%20-%20%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">leetcode - 括号生成</a>
+                        <br>
+            
+             
+                        <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/">leetcode - 报数</a>
+                        <br>
+            
+             
+                        <a href="/2019/11/16/leetcode%20-%20%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/">leetcode - 搜索插入位置</a>
+                        <br>
+            
+             
+                        <a href="/2019/11/12/leetcode-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/">leetcode - 盛最多水的容器</a>
+                        <br>
+            
+             
+                        <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/">leetcode - 字符串转换整数 (atoi)</a>
+                        <br>
+            
+             
+                        <a href="/2019/11/08/leetcode-%E5%AE%9E%E7%8E%B0%20strStr()/">leetcode - 实现 strStr()</a>
+                        <br>
+            
+             
+                        <a href="/2019/11/07/leetcode%20-%20%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/">leetcode - 移除元素</a>
+                        <br>
+            
+             
+                        <a href="/2019/11/06/leetcode-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E6%AE%B5/">leetcode - 无重复字符的最长子串</a>
+                        <br>
+            
+             
+                        <a href="/2019/11/05/leetcode-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/">leetcode - 删除排序数组中的重复项</a>
+                        <br>
+            
+             
+                        <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/">数据库实验二</a>
+                        <br>
+            
+             
+                        <a href="/2019/10/31/leetcode-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">leetcode - 有效的括号</a>
+                        <br>
+            
+             
+                        <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">leetcode - 合并两个有序链表</a>
+                        <br>
+            
+             
+                        <a href="/2019/10/27/leetcode-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">leetcode - 两数相加</a>
+                        <br>
+            
+             
+                        <a href="/2019/10/25/%E8%87%AA%E6%90%ADhexo%E5%8D%9A%E5%AE%A2/">自搭hexo博客</a>
+                        <br>
+            
+             
+                        <a href="/2019/10/25/leetcode-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/">leetcode - 最长公共前缀</a>
+                        <br>
+            
+             
+                        <a href="/2019/10/24/leetcode-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/">leetcode - 罗马数字转整数</a>
+                        <br>
+            
+             
+                        <a href="/2019/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">数据库实验 - oracle</a>
+                        <br>
+            
+             
+                        <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">leetcode - 整数反转</a>
+                        <br>
+            
+             
+                        <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
+                        <br>
+            
+             
+                        <a href="/2019/10/23/leetcode-%E5%9B%9E%E6%96%87%E6%95%B0/">leetcode - 回文数</a>
+                        <br>
+            
+             
+                        <a href="/2019/10/01/212-23%E4%BA%8B/">212 23事</a>
+                        <br>
+            
+                    </div>
+        
     </div>
 </article>
-
-
-<div id="comments-template"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script>
-	if(!window.commentConfig) {
-      window.commentConfig = {}
-      window.commentConfig.title = 'RSS&amp;RSSHub学习-操作-感悟'
-    }
-</script>
-
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -443,13 +561,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/21/cursor%E7%94%9F%E6%88%90%E5%AD%A6%E7%94%9F%E5%8F%B7/">oracle cursor生成学生号</a>
+                    <a href="/2019/10/01/212-23%E4%BA%8B/">212 23事</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/">leetcode - 报数</a>
+                    <a href="/2019/11/22/leetcode%20-%20%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">leetcode - 括号生成</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/07/leetcode%20-%20%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/">leetcode - 移除元素</a>
                 </span>
             </li>
             
@@ -461,19 +585,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/08/leetcode-%E5%AE%9E%E7%8E%B0%20strStr()/">leetcode - 实现 strStr()</a>
+                    <a href="/2019/10/23/leetcode-%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">leetcode - 整数反转</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/03/02/%E4%B8%8D%E5%90%8C%E5%B9%B4%E4%BB%A3%E7%9A%84%E7%BB%8F%E5%85%B8%E6%B8%B8%E6%88%8F/">不同年代的经典游戏</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
+                    <a href="/2019/11/28/leetcode-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/">leetcode - 最大子序和</a>
                 </span>
             </li>
             
@@ -485,13 +603,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/02/10/%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E5%A4%A9%E6%B0%94%E6%8F%90%E9%86%92/">邮箱发送天气提醒</a>
+                    <a href="/2019/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">数据库实验 - oracle</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">数据库实验 - oracle</a>
+                    <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/">数据库实验二</a>
                 </span>
             </li>
             
@@ -512,17 +630,17 @@
 
                 
                 <li>
-                    <a href="/2020/01/05/RSS&RSSHub%E5%AD%A6%E4%B9%A0-%E6%93%8D%E4%BD%9C-%E6%84%9F%E6%82%9F/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/archives/2020/03/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/01/05/RSS&RSSHub%E5%AD%A6%E4%B9%A0-%E6%93%8D%E4%BD%9C-%E6%84%9F%E6%82%9F/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/archives/2020/03/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2020/01/05/RSS&RSSHub%E5%AD%A6%E4%B9%A0-%E6%93%8D%E4%BD%9C-%E6%84%9F%E6%82%9F/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/archives/2020/03/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -530,13 +648,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 9.16938039262143px;" class="tag-cloud-link">日常</a>
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 14.27097647214854px;" class="tag-cloud-link">日常</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 9.91187992980055px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 12.703622055316806px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 11.500550583241088px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 18.127387520872873px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/leetcode/" style="font-size: 11.696166189051599px;" class="tag-cloud-link">leetcode</a>
+    <a href="/tags/leetcode/" style="font-size: 15.69813341895139px;" class="tag-cloud-link">leetcode</a>
     
 </div>
                 
@@ -652,27 +770,5 @@
 </script>
 <script src="/js/comment/leancloud.js"></script>
 
-
-<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
-<script>
-    if(window.commentConfig) {
-      window.commentConfig.id = 'Sun Jan 05 2020 13:43:33 GMT+0800'
-      window.commentConfig.owner = 'NomalButHappy'
-      window.commentConfig.repo = 'comment'
-      window.commentConfig.client_id = 'e0b4897cc1cca53c6a24'
-      window.commentConfig.client_secret = '0b72418a3830533f9f6e5cbbf9733484978dfc0c'
-      window.commentConfig.redirect_uri = ''
-    } else {
-      window.commentConfig = {
-      	id: 'Sun Jan 05 2020 13:43:33 GMT+0800',
-        owner: 'NomalButHappy',
-        repo: 'comment',
-        client_id: 'e0b4897cc1cca53c6a24',
-        client_secret: '0b72418a3830533f9f6e5cbbf9733484978dfc0c',
-        redirect_uri: ''
-      }
-    }
-</script>
-<script src="/js/comment/gitment.js"></script>
 
 </html>
