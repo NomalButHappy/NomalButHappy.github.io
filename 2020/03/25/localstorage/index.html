@@ -11,7 +11,7 @@
     
     
     
-    <title>tags: 算法 | badEgg</title>
+    <title>localstorage保存数据 | badEgg</title>
     <link href="https://nomalbuthappy.github.io" rel="prefetch" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -204,19 +204,31 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-tag">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="https://nomalbuthappy.github.io">badEgg</a>
         >
-        <span>标签</span>
+        <span>localstorage保存数据</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/tags/%E7%AE%97%E6%B3%95/page/2/index.html">算法</a>
+                <a href="/2020/03/25/localstorage/">localstorage保存数据</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2020-03-25
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-eye"></i>
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -224,48 +236,43 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/tags/%E7%AE%97%E6%B3%95/page/2/index.html">算法</a>
+                    <a href="/2020/03/25/localstorage/">localstorage保存数据</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2020-03-25
+            </p>
+            <p>
+                
+                
+                <i class="fa fa-eye"></i>
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-            <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/">leetcode - 字符串转换整数 (atoi)</a>
-            <br>
-            
-            <a href="/2019/11/08/leetcode-%E5%AE%9E%E7%8E%B0%20strStr()/">leetcode - 实现 strStr()</a>
-            <br>
-            
-            <a href="/2019/11/07/leetcode%20-%20%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/">leetcode - 移除元素</a>
-            <br>
-            
-            <a href="/2019/11/06/leetcode-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E6%AE%B5/">leetcode - 无重复字符的最长子串</a>
-            <br>
-            
-            <a href="/2019/11/05/leetcode-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/">leetcode - 删除排序数组中的重复项</a>
-            <br>
-            
-            <a href="/2019/10/31/leetcode-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/">leetcode - 有效的括号</a>
-            <br>
-            
-            <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">leetcode - 合并两个有序链表</a>
-            <br>
-            
-            <a href="/2019/10/27/leetcode-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">leetcode - 两数相加</a>
-            <br>
-            
-            <a href="/2019/10/25/leetcode-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/">leetcode - 最长公共前缀</a>
-            <br>
-            
-            <a href="/2019/10/24/leetcode-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/">leetcode - 罗马数字转整数</a>
-            <br>
-            
-            
-        </div>
+    <div class="content-article">
+        <h2 id="localstorage保存数据"><a href="#localstorage保存数据" class="headerlink" title="localstorage保存数据"></a>localstorage保存数据</h2><p>注意这个的原因是我最近在做大创项目，就是一个谷歌插件，其中我需要做一个日程表，那么这个课程表内容就需要保存下来。一开始我是想要用一个json或者txt的文件来保存它，但是失败了，这样会导致ajax的跨域问题。然后就想到session或者cookie，但是session一般是服务器端的操作，而清除cookie释放空间又会是我们学生常做的操作，在我打算查C++的资料做尝试前，我找到了这个，我好了= =。</p>
+<h4 id="首先先介绍一下localstorage"><a href="#首先先介绍一下localstorage" class="headerlink" title="首先先介绍一下localstorage"></a>首先先介绍一下localstorage</h4><p>使用 localStorage 可以创建一个本地存储的 name/value 对，而且没有cookie的4k大小限制（但是一般都不会超过4k吧）</p>
+<h4 id="再看看localstorage用法"><a href="#再看看localstorage用法" class="headerlink" title="再看看localstorage用法"></a>再看看localstorage用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str = [<span class="string">"123"</span>,<span class="string">"321"</span>];            <span class="comment">//value,是值或者list</span></span><br><span class="line">localStorage.setItem(<span class="string">"temp"</span>,str);       <span class="comment">//生成name为temp的键值对</span></span><br><span class="line"><span class="built_in">console</span>.log(localStorage.getItem(<span class="string">"temp"</span>));      <span class="comment">//取出来康康效果</span></span><br></pre></td></tr></table></figure>
+
+<p>另外，localstorage只能读取，所以对localstorage的增删查改就要通过删除重新赋值来实现</p>
+<h4 id="看看我目前的代码"><a href="#看看我目前的代码" class="headerlink" title="看看我目前的代码"></a>看看我目前的代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> ( <span class="keyword">typeof</span>(localStorage.temp) == <span class="string">"undefined"</span> )&#123; <span class="comment">//查看localStorage是否存在</span></span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"没有"</span>);</span><br><span class="line">		str = [[<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>],</span><br><span class="line">		[<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>],</span><br><span class="line">		[<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>],</span><br><span class="line">		[<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>],</span><br><span class="line">		[<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>],</span><br><span class="line">		[<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>,<span class="string">""</span>],</span><br><span class="line">		];</span><br><span class="line">		</span><br><span class="line">		localStorage.setItem(<span class="string">"temp"</span>,str);</span><br><span class="line">		<span class="built_in">console</span>.log(localStorage.getItem(<span class="string">"temp"</span>));</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"有"</span>);</span><br><span class="line">		<span class="built_in">console</span>.log(localStorage.getItem(<span class="string">"temp"</span>));</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">var</span> obj = localStorage.getItem(<span class="string">"temp"</span>).split(<span class="string">","</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(obj);</span><br><span class="line">	  <span class="keyword">var</span> ht = <span class="string">'&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Table table&lt;/th&gt;&lt;th&gt;Mon.&lt;/th&gt;&lt;th&gt;Tue.&lt;/th&gt;&lt;th&gt;Wed.&lt;/th&gt;&lt;th&gt;Thu.&lt;/th&gt;&lt;th&gt;Fri.&lt;/th&gt;&lt;th&gt;Sat.&lt;/th&gt;&lt;th&gt;Sun.&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;'</span>;</span><br><span class="line">	  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">6</span> ; i++)&#123;</span><br><span class="line">	    ht = ht+<span class="string">'&lt;tr&gt;'</span>;</span><br><span class="line">		ht = ht + <span class="string">'&lt;td&gt;'</span> + <span class="built_in">String</span>(<span class="number">2</span>*i+<span class="number">1</span>) + <span class="string">'~'</span> + <span class="built_in">String</span>(<span class="number">2</span>*i + <span class="number">2</span>) + <span class="string">'&lt;/td&gt;'</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span> ; j &lt; <span class="number">7</span> ; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			ht = ht + <span class="string">'&lt;td&gt;'</span> + obj[<span class="number">7</span>*i+j]+ <span class="string">'&lt;/td&gt;'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	    ht = ht+<span class="string">'&lt;/tr&gt;'</span>;</span><br><span class="line">	  &#125;</span><br><span class="line">	  ht = ht + <span class="string">'&lt;/tbody&gt;'</span></span><br><span class="line">	  $(<span class="string">'#tb'</span>).append(ht);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>行吧，菜鸟到此为止，继续努力。</p>
+
     </div>
 </article>
+
+
+<div id="comments-template"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script>
+	if(!window.commentConfig) {
+      window.commentConfig = {}
+      window.commentConfig.title = 'localstorage保存数据'
+    }
+</script>
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -410,18 +417,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/">leetcode - 字符串转换整数 (atoi)</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/22/leetcode%20-%20%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">leetcode - 括号生成</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2019/11/30/leetcode%20-%20%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/">leetcode - 最后一个单词的长度</a>
                 </span>
             </li>
@@ -434,25 +429,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/05/leetcode-%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9/">leetcode - 删除排序数组中的重复项</a>
+                    <a href="/2020/01/06/leetcode-Pow(x,n)/">leetcode - Pow(x, n)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/23/leetcode-%E5%9B%9E%E6%96%87%E6%95%B0/">leetcode - 回文数</a>
+                    <a href="/2019/11/28/leetcode-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97/">leetcode - 最大子序和</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/25/leetcode-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80/">leetcode - 最长公共前缀</a>
+                    <a href="/2020/03/25/localstorage/">localstorage保存数据</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/12/leetcode-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/">leetcode - 盛最多水的容器</a>
+                    <a href="/2019/10/23/leetcode%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 两数之和</a>
                 </span>
             </li>
             
@@ -464,7 +459,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%8C/">数据库实验二</a>
+                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%94/">数据库实验五</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/25/%E8%87%AA%E6%90%ADhexo%E5%8D%9A%E5%AE%A2/">自搭hexo博客</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/02/10/%E9%82%AE%E7%AE%B1%E5%8F%91%E9%80%81%E5%A4%A9%E6%B0%94%E6%8F%90%E9%86%92/">邮箱发送天气提醒</a>
                 </span>
             </li>
             
@@ -479,17 +486,17 @@
 
                 
                 <li>
-                    <a href="/tags/%E7%AE%97%E6%B3%95/page/2/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/03/25/localstorage/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/tags/%E7%AE%97%E6%B3%95/page/2/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/03/25/localstorage/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/tags/%E7%AE%97%E6%B3%95/page/2/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/03/25/localstorage/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -497,13 +504,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 18.700499315066978px;" class="tag-cloud-link">日常</a>
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 16.248977536529384px;" class="tag-cloud-link">日常</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 17.707750071795306px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 14.471707643878082px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 13.680115539898019px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 12.175936911310774px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/leetcode/" style="font-size: 18.878290505198148px;" class="tag-cloud-link">leetcode</a>
+    <a href="/tags/leetcode/" style="font-size: 9.664195798834506px;" class="tag-cloud-link">leetcode</a>
     
 </div>
                 
@@ -617,5 +624,27 @@
 </script>
 <script src="/js/comment/leancloud.js"></script>
 
+
+<script src="https://myau.moe/js/comment/gitment.browser.js"></script>
+<script>
+    if(window.commentConfig) {
+      window.commentConfig.id = 'Wed Mar 25 2020 15:16:18 GMT+0800'
+      window.commentConfig.owner = 'NomalButHappy'
+      window.commentConfig.repo = 'comment'
+      window.commentConfig.client_id = 'e0b4897cc1cca53c6a24'
+      window.commentConfig.client_secret = '0b72418a3830533f9f6e5cbbf9733484978dfc0c'
+      window.commentConfig.redirect_uri = ''
+    } else {
+      window.commentConfig = {
+      	id: 'Wed Mar 25 2020 15:16:18 GMT+0800',
+        owner: 'NomalButHappy',
+        repo: 'comment',
+        client_id: 'e0b4897cc1cca53c6a24',
+        client_secret: '0b72418a3830533f9f6e5cbbf9733484978dfc0c',
+        redirect_uri: ''
+      }
+    }
+</script>
+<script src="/js/comment/gitment.js"></script>
 
 </html>
