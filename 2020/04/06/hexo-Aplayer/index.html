@@ -11,7 +11,7 @@
     
     
     
-    <title>leetcode - 合并两个有序链表 | badEgg</title>
+    <title>hexo插入Aplayer插件 | badEgg</title>
     <link href="https://nomalbuthappy.github.io" rel="prefetch" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -53,6 +53,8 @@
         }
       }
     </script>-->
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 <body>
     <!-- 背景轮播图功能 -->
@@ -210,28 +212,19 @@
         <i class="fa fa-home"></i>
         <a href="https://nomalbuthappy.github.io">badEgg</a>
         >
-        <span>leetcode - 合并两个有序链表</span>
+        <span>hexo插入Aplayer插件</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">leetcode - 合并两个有序链表</a>
+                <a href="/2020/04/06/hexo-Aplayer/">hexo插入Aplayer插件</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>, 
-                
-                <a href="/tags/leetcode/">leetcode</a>
-                
-            </span>
-            
-            <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2019-10-31
+                <i class="fa fa-calendar"></i> 2020-04-06
             </span>
             
             <span class="label label-gal">
@@ -245,20 +238,13 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">leetcode - 合并两个有序链表</a>
+                    <a href="/2020/04/06/hexo-Aplayer/">hexo插入Aplayer插件</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2019-10-31
+                <i class="fa fa-calendar"></i> 2020-04-06
             </p>
             <p>
-                
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>, 
-                
-                <a href="/tags/leetcode/">leetcode</a>
-                
                 
                 
                 <i class="fa fa-eye"></i>
@@ -267,23 +253,52 @@
         </center>
     </div>
     <div class="content-article">
-        <h2 id="leetcode-合并两个有序链表"><a href="#leetcode-合并两个有序链表" class="headerlink" title="leetcode: 合并两个有序链表"></a>leetcode: 合并两个有序链表</h2><p>将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。</p>
-<p>还是一道简单题，是对于两个已经有序了的链表的合并操作，思路就是不断取两个链表的链头进行比较，取小的值作为新链表的尾结点值，两个链表遍历到都为空时两个链表就合并为新链表了</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span><span class="params">(self, l1, l2)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type l1: ListNode</span></span><br><span class="line"><span class="string">        :type l2: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        lhead = ListNode(<span class="number">0</span>)</span><br><span class="line">        lpre = lhead</span><br><span class="line">        <span class="keyword">while</span> l1 <span class="keyword">and</span> l2:</span><br><span class="line">            <span class="keyword">if</span> l1.val &lt;= l2.val:</span><br><span class="line">                a = ListNode(l1.val);</span><br><span class="line">                lpre.next = a;</span><br><span class="line">                l1 = l1.next;</span><br><span class="line">                lpre = lpre.next;</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                a = ListNode(l2.val);</span><br><span class="line">                lpre.next = a;</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">                lpre = lpre.next;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> l1 != <span class="literal">None</span>:</span><br><span class="line">            a = ListNode(l1.val);</span><br><span class="line">            lpre.next = a;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">            lpre = lpre.next;</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">while</span> l2 != <span class="literal">None</span>:</span><br><span class="line">            a = ListNode(l2.val);</span><br><span class="line">            lpre.next = a;</span><br><span class="line">            l2 = l2.next;</span><br><span class="line">            lpre = lpre.next;</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> lhead.next;</span><br></pre></td></tr></table></figure>
+        <h2 id="hexo插入Aplayer插件"><a href="#hexo插入Aplayer插件" class="headerlink" title="hexo插入Aplayer插件"></a>hexo插入Aplayer插件</h2><p>Aplayer是diygod大佬开始的一个开源项目，用来给网页加载播放器，我是大概一年前发现的这个项目，当时就加在了老博客上，但是当我把博客转到hexo后直接用的hexo的theme，就没有在意hexo的实现，所以便没有加入，然后发现了这个Aplayer插件= =</p>
+<p>开发与维护者是<a href="https://github.com/grzhan" target="_blank" rel="noopener">grzhan</a></p>
+<p><a href="https://github.com/MoePlayer/hexo-tag-aplayer" target="_blank" rel="noopener">https://github.com/MoePlayer/hexo-tag-aplayer</a></p>
+<p>下面是一个效果演示</p>
 
-<p>可以发现在时间和内存上都是有问题，能通过测试但是可以做一些优化，直接用提供的链表结点，这样就省下了建立结点的空间与时间</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span><span class="params">(self, l1, l2)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type l1: ListNode</span></span><br><span class="line"><span class="string">        :type l2: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        lhead = ListNode(<span class="number">0</span>)</span><br><span class="line">        lpre = lhead</span><br><span class="line">        <span class="keyword">while</span> l1 <span class="keyword">and</span> l2:</span><br><span class="line">            <span class="keyword">if</span> l1.val &lt;= l2.val:</span><br><span class="line">                lpre.next = l1;</span><br><span class="line">                l1 = l1.next;</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                lpre.next = l2;</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">            lpre = lpre.next;</span><br><span class="line">        <span class="keyword">if</span> l1 != <span class="literal">None</span>:</span><br><span class="line">            lpre.next = l1; </span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            lpre.next = l2;</span><br></pre></td></tr></table></figure>
+        <div id="aplayer-NQwxJZdE" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-NQwxJZdE"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "你好！",
+              author: "MusikM",
+              url: "../异色初音/初音ミク,MusikM - 你好.mp3",
+              pic: "",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
 
-<p>除了上面的解法，官方的解法还有一个直接调用函数的（python不仅包多，稀奇古怪的函数也多啊= =）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span><span class="params">(self, l1, l2)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> l1 <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> l2</span><br><span class="line">        <span class="keyword">elif</span> l2 <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> l1</span><br><span class="line">        <span class="keyword">elif</span> l1.val &lt; l2.val:</span><br><span class="line">            l1.next = self.mergeTwoLists(l1.next, l2)</span><br><span class="line">            <span class="keyword">return</span> l1</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            l2.next = self.mergeTwoLists(l1, l2.next)</span><br><span class="line">            <span class="keyword">return</span> l2</span><br></pre></td></tr></table></figure>
+<p>我觉得很ok，什么时候才能成为大佬啊，熬不住了啊: - (</p>
+<p>然后看看配置和加载办法（当然上面的链接下面有开发文档）</p>
+<h4 id="配置和加载办法"><a href="#配置和加载办法" class="headerlink" title="配置和加载办法"></a>配置和加载办法</h4><p>首先要安装hexo-tag-aplayer，在博客大文件夹下运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-tag-aplayer</span><br></pre></td></tr></table></figure>
 
-<p>今天看漫画的鬼才汉化组</p>
-<p>打啵教程：</p>
-<p>仪容仪表很重要</p>
-<p>前提你得有女票</p>
-<p>by全员已婚的飞橙汉化组</p>
-<p>我酸了: - (</p>
+<p>然后用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;name&quot;</span><br></pre></td></tr></table></figure>
 
+<p>新建一个markdown文档</p>
+<p>在文档下写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer title author url [picture_url, narrow, autoplay, width:xxx, lrc:xxx] %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果是多个，可以用播放器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayerlist %&#125;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;narrow&quot;: false,                          // （可选）播放器袖珍风格</span><br><span class="line">    &quot;autoplay&quot;: true,                         // （可选) 自动播放，移动端浏览器暂时不支持此功能</span><br><span class="line">    &quot;mode&quot;: &quot;random&quot;,                         // （可选）曲目循环类型，有 &apos;random&apos;（随机播放）, &apos;single&apos; (单曲播放), &apos;circulation&apos; (循环播放), &apos;order&apos; (列表播放)， 默认：&apos;circulation&apos; </span><br><span class="line">    &quot;showlrc&quot;: 3,                             // （可选）歌词显示配置项，可选项有：1,2,3</span><br><span class="line">    &quot;mutex&quot;: true,                            // （可选）该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停</span><br><span class="line">    &quot;theme&quot;: &quot;#e6d0b2&quot;,	                      // （可选）播放器风格色彩设置，默认：#b7daff</span><br><span class="line">    &quot;preload&quot;: &quot;metadata&quot;,                    // （可选）音乐文件预载入模式，可选项： &apos;none&apos; &apos;metadata&apos; &apos;auto&apos;, 默认: &apos;auto&apos;</span><br><span class="line">    &quot;listmaxheight&quot;: &quot;513px&quot;,                 // (可选) 该播放列表的最大长度</span><br><span class="line">    &quot;music&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;title&quot;: &quot;CoCo&quot;,</span><br><span class="line">            &quot;author&quot;: &quot;Jeff Williams&quot;,</span><br><span class="line">            &quot;url&quot;: &quot;caffeine.mp3&quot;,</span><br><span class="line">            &quot;pic&quot;: &quot;caffeine.jpeg&quot;,</span><br><span class="line">            &quot;lrc&quot;: &quot;caffeine.txt&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;title&quot;: &quot;アイロニ&quot;,</span><br><span class="line">            &quot;author&quot;: &quot;鹿乃&quot;,</span><br><span class="line">            &quot;url&quot;: &quot;irony.mp3&quot;,</span><br><span class="line">            &quot;pic&quot;: &quot;irony.jpg&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line">&#123;% endaplayerlist %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看看播放器的效果</p>
+
+			<script>
+				console.error("SyntaxError: Unexpected token / in JSON at position 48");
+			</script>
     </div>
 </article>
 
@@ -293,7 +308,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = 'leetcode - 合并两个有序链表'
+      window.commentConfig.title = 'hexo插入Aplayer插件'
     }
 </script>
 
@@ -441,13 +456,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/01/01/hexo%E6%8F%92%E5%85%A5Aplayer%E6%8F%92%E4%BB%B6/">hexo插入Aplayer插件</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/12/02/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C2/">leetcode - 三数之和2</a>
+                    <a href="/2020/04/06/hexo-Aplayer/">hexo插入Aplayer插件</a>
                 </span>
             </li>
             
@@ -459,13 +468,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/">leetcode - 报数</a>
+                    <a href="/2019/11/22/leetcode%20-%20%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/">leetcode - 括号生成</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/10/27/leetcode-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">leetcode - 两数相加</a>
+                    <a href="/2019/11/30/leetcode%20-%20%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6/">leetcode - 最后一个单词的长度</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/12/06/leetcode-%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9A%84%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/">leetcode - 最接近的三数之和</a>
                 </span>
             </li>
             
@@ -477,25 +492,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2020/02/05/tensorflow%20nmist%E5%BA%93%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/">tensorflow nmist库手写数字识别</a>
+                    <a href="/2019/12/02/%E5%BC%82%E8%89%B2%E5%88%9D%E9%9F%B3/">异色初音</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%88%E6%94%B9%EF%BC%89/">数据库实验 - oracle</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%94/">数据库实验五</a>
+                    <a href="/2019/10/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">数据库实验 - oracle</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/">数据库实验四</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/04/01/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3AES%E5%8A%A0%E5%AF%86%E7%9A%84%E7%88%AC%E8%99%AB/">记一次破解AES加密的爬虫</a>
                 </span>
             </li>
             
@@ -510,17 +525,17 @@
 
                 
                 <li>
-                    <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2020/04/06/hexo-Aplayer/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2020/04/06/hexo-Aplayer/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2020/04/06/hexo-Aplayer/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -528,13 +543,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 8.26874010866462px;" class="tag-cloud-link">日常</a>
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 14.63112925240354px;" class="tag-cloud-link">日常</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 9.321909530144378px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 19.631276325929022px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14.66550476176532px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 12.258160503426707px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/leetcode/" style="font-size: 17.46495818154158px;" class="tag-cloud-link">leetcode</a>
+    <a href="/tags/leetcode/" style="font-size: 9.343937667560615px;" class="tag-cloud-link">leetcode</a>
     
 </div>
                 
@@ -652,7 +667,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Thu Oct 31 2019 13:01:39 GMT+0800'
+      window.commentConfig.id = 'Mon Apr 06 2020 17:26:45 GMT+0800'
       window.commentConfig.owner = 'NomalButHappy'
       window.commentConfig.repo = 'comment'
       window.commentConfig.client_id = 'e0b4897cc1cca53c6a24'
@@ -660,7 +675,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Thu Oct 31 2019 13:01:39 GMT+0800',
+      	id: 'Mon Apr 06 2020 17:26:45 GMT+0800',
         owner: 'NomalButHappy',
         repo: 'comment',
         client_id: 'e0b4897cc1cca53c6a24',

@@ -11,7 +11,7 @@
     
     
     
-    <title>leetcode - 合并两个有序链表 | badEgg</title>
+    <title>badEgg</title>
     <link href="https://nomalbuthappy.github.io" rel="prefetch" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -205,18 +205,43 @@
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
                     
-<article class="article well article-body" id="article">
-    <div class="breadcrumb">
-        <i class="fa fa-home"></i>
-        <a href="https://nomalbuthappy.github.io">badEgg</a>
-        >
-        <span>leetcode - 合并两个有序链表</span>
+<div class="alert well fade in" id="gal-issue" role="alert">
+    <!-- TODO 添加关闭公告框功能 -->
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <!-- 这里自行配置公告内容 -->
+    主题来自<strong>AONOSORA ZEROKISEKI</strong>大佬
+    <br>
+    复刻<strong>忧郁的弟弟</strong>大佬的网站
+	<br>
+	彩笔<strong>小坏蛋</strong>白嫖用于学习与博客分享
+    <!-- 自行配置公告内容结束 -->
+</div>
+<div class="alert well fade in" id="gal-issue" role="alert">
+    <!-- TODO 添加关闭公告框功能 -->
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <!-- 这里自行配置公告内容 -->
+	
+	<script type="text/javascript" src="https://api.uixsj.cn/hitokoto/w.php?c=b&code=js"></script>
+	<div id="xsjhitokoto"><script>xsjhitokoto()</script></div>
+    <!-- 自行配置公告内容结束 -->
+</div>
+
+<div id="article-list">
+     
+     
+     <div class="article well clearfix article-body article-excerpt" data-aos="flip-up">
+    
+    <div class="data-article hidden-xs">
+        <span class="month">10月</span>
+        <span class="day">01</span>
     </div>
-    <!-- 大型设备详细文章 -->
-    <div class="hidden-xs">
+    <!-- 大型设备文章 -->
+    <section class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">leetcode - 合并两个有序链表</a>
+                <a href="/2019/10/01/212-23%E4%BA%8B/">
+                    <span>212 23事</span>
+                </a>
             </h1>
         </div>
         <div class="tag-article">
@@ -224,78 +249,129 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>, 
-                
-                <a href="/tags/leetcode/">leetcode</a>
+                <a href="/tags/%E6%97%A5%E5%B8%B8/">日常</a>
                 
             </span>
             
-            <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2019-10-31
-            </span>
             
             <span class="label label-gal">
                 <i class="fa fa-eye"></i>
             </span>
             
+            <!-- TODO 添加评论统计 -->
+            <!--<span class="label label-gal">
+                <i class="fa fa-comments"></i>
+                <a href="/2019/10/01/212-23%E4%BA%8B/#comments">739</a>
+            </span>-->
         </div>
-    </div>
-    <!-- 小型设备详细文章 -->
-    <div class="visible-xs">
-        <center>
-            <div class="title-article">
-                <h4>
-                    <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">leetcode - 合并两个有序链表</a>
-                </h4>
+        <div class="alert alert-gal article-body content-article">
+            <div class="item">
+                <a href="/2019/10/01/212-23%E4%BA%8B/">
+                    <div class="img">
+                        
+                        <img src="/imgs/preview/preview2.jpg" alt="212 23事">
+                    </div>
+                    <div class="info">
+                        
+                    </div>
+                </a>
             </div>
-            <p>
-                <i class="fa fa-calendar"></i> 2019-10-31
-            </p>
-            <p>
-                
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>, 
-                
-                <a href="/tags/leetcode/">leetcode</a>
-                
-                
-                
-                <i class="fa fa-eye"></i>
-                
-            </p>
+        </div>
+    </section>
+    <section class="visible-xs">
+        <div class="title-article">
+            <center>
+                <h4>
+                    <a href="/2019/10/01/212-23%E4%BA%8B/">
+                        <span>212 23事</span>
+                    </a>
+                </h4>
+            </center>
+        </div>
+        <p></p>
+        <center>
+            <i class="fa fa-calendar"></i> 2019-10-01
         </center>
-    </div>
-    <div class="content-article">
-        <h2 id="leetcode-合并两个有序链表"><a href="#leetcode-合并两个有序链表" class="headerlink" title="leetcode: 合并两个有序链表"></a>leetcode: 合并两个有序链表</h2><p>将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。</p>
-<p>还是一道简单题，是对于两个已经有序了的链表的合并操作，思路就是不断取两个链表的链头进行比较，取小的值作为新链表的尾结点值，两个链表遍历到都为空时两个链表就合并为新链表了</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span><span class="params">(self, l1, l2)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type l1: ListNode</span></span><br><span class="line"><span class="string">        :type l2: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        lhead = ListNode(<span class="number">0</span>)</span><br><span class="line">        lpre = lhead</span><br><span class="line">        <span class="keyword">while</span> l1 <span class="keyword">and</span> l2:</span><br><span class="line">            <span class="keyword">if</span> l1.val &lt;= l2.val:</span><br><span class="line">                a = ListNode(l1.val);</span><br><span class="line">                lpre.next = a;</span><br><span class="line">                l1 = l1.next;</span><br><span class="line">                lpre = lpre.next;</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                a = ListNode(l2.val);</span><br><span class="line">                lpre.next = a;</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">                lpre = lpre.next;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> l1 != <span class="literal">None</span>:</span><br><span class="line">            a = ListNode(l1.val);</span><br><span class="line">            lpre.next = a;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">            lpre = lpre.next;</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">while</span> l2 != <span class="literal">None</span>:</span><br><span class="line">            a = ListNode(l2.val);</span><br><span class="line">            lpre.next = a;</span><br><span class="line">            l2 = l2.next;</span><br><span class="line">            lpre = lpre.next;</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> lhead.next;</span><br></pre></td></tr></table></figure>
+        <p></p>
+        <p></p>
+        <center>
+            
+            <i class="fa fa-tags"></i>
+            
+            <a href="/tags/%E6%97%A5%E5%B8%B8/">日常</a>
+            
+            
+            
+            <i class="fa fa-eye"></i>
+            
+        </center>
+        <p></p>
+        <div class="alert alert-gal article-body content-article">
+            <p style="text-align: center;">
+                <a href="/2019/10/01/212-23%E4%BA%8B/">
+                    
+                    <img src="/imgs/preview/preview1.jpg" alt="212 23事">
+                </a>
+            </p>
+        </div>
+        
+        <a class="btn btn-danger pull-right read-more btn-block" href="/2019/10/01/212-23%E4%BA%8B/">
+            阅读全文
+            <!--<span class="badge">739</span>-->
+        </a>
+    </section>
+</div>
+     
+</div>
+<!-- 前方最多7个 < 1 2 3 4 5 6 -->
+<!-- 前方超过第7页则分为 < 1 ... (n - 3) (n - 2) (n - 1) n, 此时前面为固定的6个 -->
 
-<p>可以发现在时间和内存上都是有问题，能通过测试但是可以做一些优化，直接用提供的链表结点，这样就省下了建立结点的空间与时间</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span><span class="params">(self, l1, l2)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type l1: ListNode</span></span><br><span class="line"><span class="string">        :type l2: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        lhead = ListNode(<span class="number">0</span>)</span><br><span class="line">        lpre = lhead</span><br><span class="line">        <span class="keyword">while</span> l1 <span class="keyword">and</span> l2:</span><br><span class="line">            <span class="keyword">if</span> l1.val &lt;= l2.val:</span><br><span class="line">                lpre.next = l1;</span><br><span class="line">                l1 = l1.next;</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                lpre.next = l2;</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">            lpre = lpre.next;</span><br><span class="line">        <span class="keyword">if</span> l1 != <span class="literal">None</span>:</span><br><span class="line">            lpre.next = l1; </span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            lpre.next = l2;</span><br></pre></td></tr></table></figure>
-
-<p>除了上面的解法，官方的解法还有一个直接调用函数的（python不仅包多，稀奇古怪的函数也多啊= =）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span><span class="params">(self, l1, l2)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> l1 <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> l2</span><br><span class="line">        <span class="keyword">elif</span> l2 <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> l1</span><br><span class="line">        <span class="keyword">elif</span> l1.val &lt; l2.val:</span><br><span class="line">            l1.next = self.mergeTwoLists(l1.next, l2)</span><br><span class="line">            <span class="keyword">return</span> l1</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            l2.next = self.mergeTwoLists(l1, l2.next)</span><br><span class="line">            <span class="keyword">return</span> l2</span><br></pre></td></tr></table></figure>
-
-<p>今天看漫画的鬼才汉化组</p>
-<p>打啵教程：</p>
-<p>仪容仪表很重要</p>
-<p>前提你得有女票</p>
-<p>by全员已婚的飞橙汉化组</p>
-<p>我酸了: - (</p>
-
-    </div>
-</article>
+<!-- 后方最多8个 (n + 1) 到 (n + 7) > -->
+<!-- 如果末页和当前页相差超过7, 此时后面为固定的6个, (n + 1) (n + 2) (n + 3) ... total > -->
 
 
-<div id="comments-template"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script>
-	if(!window.commentConfig) {
-      window.commentConfig = {}
-      window.commentConfig.title = 'leetcode - 合并两个有序链表'
-    }
-</script>
+
+<div id="gal-pagination" class="clearfix">
+    <ul class="pagination pagination-gal pull-right">
+        
+        <li class="prev">
+            <a href="/page/8/">«</a>
+        </li>
+        
+        
+        <li>
+            <a href="/">1</a>
+        </li>
+        <li>
+            <span>...</span>
+        </li>
+        
+        <li>
+            <a href="/page/6 ">6</a>
+        </li>
+        
+        <li>
+            <a href="/page/7 ">7</a>
+        </li>
+        
+        <li>
+            <a href="/page/8 ">8</a>
+        </li>
+        
+        
+        <li class="current">
+            <span>9</span>
+        </li>
+        
+        
+        
+        
+    </ul>
+</div>
+
+<!-- 加上这段代码原因： gitment在首页加载时, 如果找不到对应的控件会报错，此处加上，同时设置为none，防止报错 -->   
+  
+    <div id="comments-template" style="display:none"></div> 
 
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
@@ -441,25 +517,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2019/12/21/cursor%E7%94%9F%E6%88%90%E5%AD%A6%E7%94%9F%E5%8F%B7/">oracle cursor生成学生号</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2020/01/01/hexo%E6%8F%92%E5%85%A5Aplayer%E6%8F%92%E4%BB%B6/">hexo插入Aplayer插件</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/02/leetcode%20-%20%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C2/">leetcode - 三数之和2</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/11/leetcode%20-%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0/">leetcode - 字符串转换整数 (atoi)</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/11/21/leetcode%20-%20%E6%8A%A5%E6%95%B0/">leetcode - 报数</a>
+                    <a href="/2020/01/06/leetcode-Pow(x,n)/">leetcode - Pow(x, n)</a>
                 </span>
             </li>
             
@@ -471,7 +541,19 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/11/12/leetcode-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/">leetcode - 盛最多水的容器</a>
+                    <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">leetcode - 合并两个有序链表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/24/leetcode-%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E8%BD%AC%E6%95%B4%E6%95%B0/">leetcode - 罗马数字转整数</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2020/03/25/localstorage/">localstorage保存数据</a>
                 </span>
             </li>
             
@@ -483,19 +565,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%88%E6%94%B9%EF%BC%89/">数据库实验 - oracle</a>
+                    <a href="/2020/02/04/tensorflow%E5%9C%A8windows%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%EF%BC%88%E6%97%A0anaconda%EF%BC%89/">tensorflow在windows下的安装（无anaconda）</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E4%BA%94/">数据库实验五</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2019/12/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B/">数据库实验四</a>
+                    <a href="/2020/04/01/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%A0%B4%E8%A7%A3AES%E5%8A%A0%E5%AF%86%E7%9A%84%E7%88%AC%E8%99%AB/">记一次破解AES加密的爬虫</a>
                 </span>
             </li>
             
@@ -510,17 +586,17 @@
 
                 
                 <li>
-                    <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/page/9/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/page/9/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2019/10/31/leetcode-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/page/9/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
@@ -528,13 +604,13 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 8.26874010866462px;" class="tag-cloud-link">日常</a>
+    <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 14.718439105416895px;" class="tag-cloud-link">日常</a>
     
-    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 9.321909530144378px;" class="tag-cloud-link">数据库</a>
+    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.25956464246602px;" class="tag-cloud-link">数据库</a>
     
-    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14.66550476176532px;" class="tag-cloud-link">算法</a>
+    <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19.05371501299576px;" class="tag-cloud-link">算法</a>
     
-    <a href="/tags/leetcode/" style="font-size: 17.46495818154158px;" class="tag-cloud-link">leetcode</a>
+    <a href="/tags/leetcode/" style="font-size: 8.200799882103667px;" class="tag-cloud-link">leetcode</a>
     
 </div>
                 
@@ -652,7 +728,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Thu Oct 31 2019 13:01:39 GMT+0800'
+      window.commentConfig.id = ''
       window.commentConfig.owner = 'NomalButHappy'
       window.commentConfig.repo = 'comment'
       window.commentConfig.client_id = 'e0b4897cc1cca53c6a24'
@@ -660,7 +736,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Thu Oct 31 2019 13:01:39 GMT+0800',
+      	id: '',
         owner: 'NomalButHappy',
         repo: 'comment',
         client_id: 'e0b4897cc1cca53c6a24',
